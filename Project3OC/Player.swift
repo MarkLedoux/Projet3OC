@@ -9,19 +9,9 @@
 import Foundation
 
 class Player {
-    var name: String
-    
-    init(name:String) {
+    var name = ""
+
+    init(name: String) {
         self.name = name
     }
-    
-}
-
-class Player1: Player {
-    var player1 = Player(name: readLine()!)
-
-}
-
-class Player2: Player {
-    var player2 = Player(name: readLine()!)
 }

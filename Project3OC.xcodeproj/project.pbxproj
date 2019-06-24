@@ -11,8 +11,9 @@
 		B33269D722B9565000E58572 /* Elf.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33269D622B9565000E58572 /* Elf.swift */; };
 		B33269D922B9565900E58572 /* Human.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33269D822B9565900E58572 /* Human.swift */; };
 		B33269DB22B9567200E58572 /* Magician.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33269DA22B9567200E58572 /* Magician.swift */; };
+		B3550BD722C0CE40002C4ABA /* LargeSword.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3550BD622C0CE40002C4ABA /* LargeSword.swift */; };
 		B375D3D522A8267600B568DC /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B375D3D422A8267600B568DC /* main.swift */; };
-		B375D3DC22A826D100B568DC /* Players.swift in Sources */ = {isa = PBXBuildFile; fileRef = B375D3DB22A826D100B568DC /* Players.swift */; };
+		B375D3DC22A826D100B568DC /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = B375D3DB22A826D100B568DC /* Player.swift */; };
 		B375D3DE22A826E900B568DC /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = B375D3DD22A826E900B568DC /* Team.swift */; };
 		B375D3E022A8270100B568DC /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = B375D3DF22A8270100B568DC /* Character.swift */; };
 		B3B0ADB222AAB71E004EA0D3 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B0ADB122AAB71E004EA0D3 /* Game.swift */; };
@@ -36,9 +37,10 @@
 		B33269D622B9565000E58572 /* Elf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Elf.swift; sourceTree = "<group>"; };
 		B33269D822B9565900E58572 /* Human.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Human.swift; sourceTree = "<group>"; };
 		B33269DA22B9567200E58572 /* Magician.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Magician.swift; sourceTree = "<group>"; };
+		B3550BD622C0CE40002C4ABA /* LargeSword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeSword.swift; sourceTree = "<group>"; };
 		B375D3D122A8267600B568DC /* Project3OC */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Project3OC; sourceTree = BUILT_PRODUCTS_DIR; };
 		B375D3D422A8267600B568DC /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		B375D3DB22A826D100B568DC /* Players.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Players.swift; sourceTree = "<group>"; };
+		B375D3DB22A826D100B568DC /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		B375D3DD22A826E900B568DC /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		B375D3DF22A8270100B568DC /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		B3B0ADB122AAB71E004EA0D3 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
@@ -76,15 +78,16 @@
 			isa = PBXGroup;
 			children = (
 				B375D3D422A8267600B568DC /* main.swift */,
-				B375D3DB22A826D100B568DC /* Players.swift */,
+				B375D3DB22A826D100B568DC /* Player.swift */,
 				B3B0ADB122AAB71E004EA0D3 /* Game.swift */,
 				B375D3DD22A826E900B568DC /* Team.swift */,
 				B375D3DF22A8270100B568DC /* Character.swift */,
-				B3F66F3A22BB7F98009D5664 /* Weapon.swift */,
 				B33269D622B9565000E58572 /* Elf.swift */,
 				B33269D822B9565900E58572 /* Human.swift */,
 				B33269DA22B9567200E58572 /* Magician.swift */,
 				B33269D422B9562800E58572 /* Werebison.swift */,
+				B3F66F3A22BB7F98009D5664 /* Weapon.swift */,
+				B3550BD622C0CE40002C4ABA /* LargeSword.swift */,
 			);
 			path = Project3OC;
 			sourceTree = "<group>";
@@ -147,11 +150,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B375D3DE22A826E900B568DC /* Team.swift in Sources */,
-				B375D3DC22A826D100B568DC /* Players.swift in Sources */,
+				B375D3DC22A826D100B568DC /* Player.swift in Sources */,
 				B33269DB22B9567200E58572 /* Magician.swift in Sources */,
 				B33269D722B9565000E58572 /* Elf.swift in Sources */,
 				B3B0ADB222AAB71E004EA0D3 /* Game.swift in Sources */,
 				B3F66F3B22BB7F98009D5664 /* Weapon.swift in Sources */,
+				B3550BD722C0CE40002C4ABA /* LargeSword.swift in Sources */,
 				B375D3D522A8267600B568DC /* main.swift in Sources */,
 				B33269D522B9562800E58572 /* Werebison.swift in Sources */,
 				B375D3E022A8270100B568DC /* Character.swift in Sources */,
