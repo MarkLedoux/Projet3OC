@@ -18,3 +18,5 @@ print("\(character2.name) has \(character2.healthPoints)")
 
 character1.attack(target: character2)
 print("\(character2.name) has \(character2.healthPoints) HP left")
+
+
