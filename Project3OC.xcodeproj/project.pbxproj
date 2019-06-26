@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B3094FA622C35E3A008F4113 /* Axe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3094FA522C35E3A008F4113 /* Axe.swift */; };
+		B3094FA822C35E46008F4113 /* Bow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3094FA722C35E46008F4113 /* Bow.swift */; };
+		B3094FAA22C35E5A008F4113 /* Gun.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3094FA922C35E5A008F4113 /* Gun.swift */; };
+		B3094FAC22C35E70008F4113 /* Knife.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3094FAB22C35E70008F4113 /* Knife.swift */; };
+		B3094FAE22C35E86008F4113 /* Staff.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3094FAD22C35E86008F4113 /* Staff.swift */; };
+		B3094FB022C35E94008F4113 /* Javelin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3094FAF22C35E94008F4113 /* Javelin.swift */; };
+		B3094FB222C35EA2008F4113 /* ThinSword.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3094FB122C35EA2008F4113 /* ThinSword.swift */; };
+		B3094FB422C35FD0008F4113 /* FireAttack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3094FB322C35FD0008F4113 /* FireAttack.swift */; };
+		B3094FB622C35FDF008F4113 /* WaterAttack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3094FB522C35FDF008F4113 /* WaterAttack.swift */; };
+		B3094FB822C36008008F4113 /* ElectricalAttack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3094FB722C36008008F4113 /* ElectricalAttack.swift */; };
+		B3094FBA22C36063008F4113 /* Healing.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3094FB922C36063008F4113 /* Healing.swift */; };
 		B33269D522B9562800E58572 /* Werebison.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33269D422B9562800E58572 /* Werebison.swift */; };
 		B33269D722B9565000E58572 /* Elf.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33269D622B9565000E58572 /* Elf.swift */; };
 		B33269D922B9565900E58572 /* Human.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33269D822B9565900E58572 /* Human.swift */; };
@@ -33,6 +44,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B3094FA522C35E3A008F4113 /* Axe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Axe.swift; sourceTree = "<group>"; };
+		B3094FA722C35E46008F4113 /* Bow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bow.swift; sourceTree = "<group>"; };
+		B3094FA922C35E5A008F4113 /* Gun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gun.swift; sourceTree = "<group>"; };
+		B3094FAB22C35E70008F4113 /* Knife.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Knife.swift; sourceTree = "<group>"; };
+		B3094FAD22C35E86008F4113 /* Staff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Staff.swift; sourceTree = "<group>"; };
+		B3094FAF22C35E94008F4113 /* Javelin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Javelin.swift; sourceTree = "<group>"; };
+		B3094FB122C35EA2008F4113 /* ThinSword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThinSword.swift; sourceTree = "<group>"; };
+		B3094FB322C35FD0008F4113 /* FireAttack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireAttack.swift; sourceTree = "<group>"; };
+		B3094FB522C35FDF008F4113 /* WaterAttack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterAttack.swift; sourceTree = "<group>"; };
+		B3094FB722C36008008F4113 /* ElectricalAttack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectricalAttack.swift; sourceTree = "<group>"; };
+		B3094FB922C36063008F4113 /* Healing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Healing.swift; sourceTree = "<group>"; };
 		B33269D422B9562800E58572 /* Werebison.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Werebison.swift; sourceTree = "<group>"; };
 		B33269D622B9565000E58572 /* Elf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Elf.swift; sourceTree = "<group>"; };
 		B33269D822B9565900E58572 /* Human.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Human.swift; sourceTree = "<group>"; };
@@ -87,6 +109,17 @@
 				B33269DA22B9567200E58572 /* Magician.swift */,
 				B33269D422B9562800E58572 /* Werebison.swift */,
 				B3F66F3A22BB7F98009D5664 /* Weapon.swift */,
+				B3094FB922C36063008F4113 /* Healing.swift */,
+				B3094FB322C35FD0008F4113 /* FireAttack.swift */,
+				B3094FB522C35FDF008F4113 /* WaterAttack.swift */,
+				B3094FB722C36008008F4113 /* ElectricalAttack.swift */,
+				B3094FAF22C35E94008F4113 /* Javelin.swift */,
+				B3094FB122C35EA2008F4113 /* ThinSword.swift */,
+				B3094FAD22C35E86008F4113 /* Staff.swift */,
+				B3094FAB22C35E70008F4113 /* Knife.swift */,
+				B3094FA922C35E5A008F4113 /* Gun.swift */,
+				B3094FA722C35E46008F4113 /* Bow.swift */,
+				B3094FA522C35E3A008F4113 /* Axe.swift */,
 				B3550BD622C0CE40002C4ABA /* LargeSword.swift */,
 			);
 			path = Project3OC;
@@ -149,14 +182,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3094FAA22C35E5A008F4113 /* Gun.swift in Sources */,
 				B375D3DE22A826E900B568DC /* Team.swift in Sources */,
 				B375D3DC22A826D100B568DC /* Player.swift in Sources */,
+				B3094FA622C35E3A008F4113 /* Axe.swift in Sources */,
 				B33269DB22B9567200E58572 /* Magician.swift in Sources */,
+				B3094FB822C36008008F4113 /* ElectricalAttack.swift in Sources */,
+				B3094FAC22C35E70008F4113 /* Knife.swift in Sources */,
 				B33269D722B9565000E58572 /* Elf.swift in Sources */,
+				B3094FA822C35E46008F4113 /* Bow.swift in Sources */,
+				B3094FB022C35E94008F4113 /* Javelin.swift in Sources */,
 				B3B0ADB222AAB71E004EA0D3 /* Game.swift in Sources */,
 				B3F66F3B22BB7F98009D5664 /* Weapon.swift in Sources */,
+				B3094FB622C35FDF008F4113 /* WaterAttack.swift in Sources */,
+				B3094FAE22C35E86008F4113 /* Staff.swift in Sources */,
+				B3094FB422C35FD0008F4113 /* FireAttack.swift in Sources */,
 				B3550BD722C0CE40002C4ABA /* LargeSword.swift in Sources */,
 				B375D3D522A8267600B568DC /* main.swift in Sources */,
+				B3094FB222C35EA2008F4113 /* ThinSword.swift in Sources */,
+				B3094FBA22C36063008F4113 /* Healing.swift in Sources */,
 				B33269D522B9562800E58572 /* Werebison.swift in Sources */,
 				B375D3E022A8270100B568DC /* Character.swift in Sources */,
 				B33269D922B9565900E58572 /* Human.swift in Sources */,

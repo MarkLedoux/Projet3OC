@@ -16,10 +16,5 @@ class Weapon {
         self.name = name
         self.damage = damage
     }
-    
-
-    var weaponNameAndDamage = ["Large Sword": 150, "Axe": 150, "Guns": 90, "Bow": 50, "Staff": 50, "Javelin": 110, "Thin Sword": 120, "Knives": 90]
-    var magicalAttacksAndDamage = ["Fire Attack": 130, "Water Attack": 130, "Earth Attack": 125, "Air Attack": 120, "Healing": 130]
-
 }
 
