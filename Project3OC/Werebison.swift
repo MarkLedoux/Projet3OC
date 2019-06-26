@@ -17,7 +17,8 @@ class Werebison: Character {
         } else {
             self.healthPoints = 775
         }
-        self.weapon = 
+        self.weapon = LargeSword(name: "Large Sword", damage: 150)
+        self.weapon = Axe(name: "Axe", damage: 150)
         print("Your character is ready to go!")
     }
 }
