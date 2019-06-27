@@ -15,6 +15,10 @@ class Player {
     init(name: String) {
         self.name = name
     }
+    func checkIfNamesAreDifferent() {
+        
+    }
+
     func createTeam() {
         repeat {
             print(team.count)
