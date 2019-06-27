@@ -27,6 +27,8 @@
 		B375D3DC22A826D100B568DC /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = B375D3DB22A826D100B568DC /* Player.swift */; };
 		B375D3E022A8270100B568DC /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = B375D3DF22A8270100B568DC /* Character.swift */; };
 		B3B0ADB222AAB71E004EA0D3 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B0ADB122AAB71E004EA0D3 /* Game.swift */; };
+		B3B23AEE22C4AC7200E20FF0 /* DragonScaleElvenSword.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B23AED22C4AC7200E20FF0 /* DragonScaleElvenSword.swift */; };
+		B3B23AF022C4ACB400E20FF0 /* CombinedElementalAttack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B23AEF22C4ACB400E20FF0 /* CombinedElementalAttack.swift */; };
 		B3F66F3B22BB7F98009D5664 /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F66F3A22BB7F98009D5664 /* Weapon.swift */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +66,8 @@
 		B375D3DB22A826D100B568DC /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		B375D3DF22A8270100B568DC /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		B3B0ADB122AAB71E004EA0D3 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		B3B23AED22C4AC7200E20FF0 /* DragonScaleElvenSword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonScaleElvenSword.swift; sourceTree = "<group>"; };
+		B3B23AEF22C4ACB400E20FF0 /* CombinedElementalAttack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinedElementalAttack.swift; sourceTree = "<group>"; };
 		B3F66F3A22BB7F98009D5664 /* Weapon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,6 +122,8 @@
 				B3094FA722C35E46008F4113 /* Bow.swift */,
 				B3094FA522C35E3A008F4113 /* Axe.swift */,
 				B3550BD622C0CE40002C4ABA /* LargeSword.swift */,
+				B3B23AED22C4AC7200E20FF0 /* DragonScaleElvenSword.swift */,
+				B3B23AEF22C4ACB400E20FF0 /* CombinedElementalAttack.swift */,
 			);
 			path = Project3OC;
 			sourceTree = "<group>";
@@ -195,6 +201,8 @@
 				B3094FB422C35FD0008F4113 /* FireAttack.swift in Sources */,
 				B3550BD722C0CE40002C4ABA /* LargeSword.swift in Sources */,
 				B375D3D522A8267600B568DC /* main.swift in Sources */,
+				B3B23AF022C4ACB400E20FF0 /* CombinedElementalAttack.swift in Sources */,
+				B3B23AEE22C4AC7200E20FF0 /* DragonScaleElvenSword.swift in Sources */,
 				B3094FB222C35EA2008F4113 /* ThinSword.swift in Sources */,
 				B3094FBA22C36063008F4113 /* Healing.swift in Sources */,
 				B33269D522B9562800E58572 /* Werebison.swift in Sources */,

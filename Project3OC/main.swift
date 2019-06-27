@@ -14,7 +14,7 @@ var welcomeToGame = "Welcome to the Ultimate Fantasy Game!"
 var player1 = Player(name: "Mark")
 player1.createTeam()
 
-/*var character1 = Werebison(name: "Paula", gender: .female)
+var character1 = Werebison(name: "Paula", gender: .female)
 print("\(character1.name) has \(character1.healthPoints)")
 var character2 = Magician(name: "Pierre", gender: .male)
 print("\(character2.name) has \(character2.healthPoints)")
@@ -23,4 +23,3 @@ character1.attack(target: character2)
 print("\(character2.name) has \(character2.healthPoints) HP left")
 character2.attack(target: character1)
 print("\(character1.name) has \(character1.healthPoints) HP left")
-*/
