@@ -16,7 +16,9 @@ class Player {
         self.name = name
     }
     func checkIfNamesAreDifferent() {
-        
+        if player1.name == player2.name {
+            
+        }
     }
 
     func createTeam() {
