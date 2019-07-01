@@ -32,6 +32,8 @@ print("Now it's your turn \(player2.name) ")
 player2.createTeam()
 
 
+
+
 print("\(player1.team[0].name) has \(player1.team[0].healthPoints)")
 print("\(player1.team[1].name) has \(player1.team[1].healthPoints)")
 print("\(player1.team[2].name) has \(player1.team[2].healthPoints)")

@@ -10,7 +10,7 @@ import Foundation
 
 class Player {
     var name = ""
-    var team = [Character]()
+    var team: [Character] = [Werebison(name: readLine()!, gender: <#T##Character.Gender#>), Human(name: readLine()!, gender: <#T##Character.Gender#>), Elf(name: readLine()!, gender: <#T##Character.Gender#>), Magician(name: readLine()!, gender: <#T##Character.Gender#>)]
 
     init(name: String) {
         self.name = name
@@ -25,6 +25,11 @@ class Player {
     }
 
     func createTeam() {
+        for teammates in team {
+            if player1.team[0] as? Werebison {
+                print(player1.team[0].healthPoints)
+            }
+        }
         repeat {
             print("Please add another member to your team.")
             team.append(Character(name: readLine()!, gender: .female))

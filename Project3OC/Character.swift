@@ -19,6 +19,7 @@ class Character {
     var weapon: Weapon
 
 
+
     init(name: String, gender: Gender) {
         self.name = name
         self.healthPoints = 0
