@@ -20,6 +20,7 @@ print("Player 2, your turn!")
 print("Please enter your name!")
 
 var player2 = Player(name: readLine()!)
+player2.checkIfNamesAreDifferent()
 
 print("Player 1 will now be refered to as \(player1.name)")
 print("Player 1 will now be refered to as \(player2.name)")

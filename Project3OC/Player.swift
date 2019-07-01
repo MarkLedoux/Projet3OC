@@ -17,7 +17,10 @@ class Player {
     }
     func checkIfNamesAreDifferent() {
         if player1.name == player2.name {
-            
+            print("You cannot have similar names, please choose a different name.")
+            player2 = Player(name: readLine()!)
+        } else {
+            print("Well done on choosing your names.")
         }
     }
 
