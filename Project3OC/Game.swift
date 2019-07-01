@@ -13,7 +13,7 @@ class Game {
         let secondRoll = Int.random(in: 1...6)
         print("\(firstRoll) \(secondRoll)")
 
-        if firstRoll == secondRoll {
+        if firstRoll == 6 && secondRoll == 6 {
             print("You win!")
 
             return true
@@ -21,5 +21,4 @@ class Game {
         print("Better luck next time!")
         return false
     }
-
 }

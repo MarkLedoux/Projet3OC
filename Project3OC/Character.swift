@@ -26,8 +26,13 @@ class Character {
     }
 
     func attack(target: Character) {
-        target.healthPoints -= self.weapon.damage
-        print("\(self.name) inflicted \(self.weapon.damage) damage points to \(target.name), now \(target.name) only has \(target.healthPoints) HP left. ")
+        if healthPoints > 0 {
+            target.healthPoints -= self.weapon.damage
+            print("\(self.name) inflicted \(self.weapon.damage) damage points to \(target.name), now \(target.name) only has \(target.healthPoints) HP left. ")
+        } else {
+            print("This character is already dead you cannot attack him anymore.")
+        }
+
     }
 
 }

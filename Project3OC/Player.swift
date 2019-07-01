@@ -26,7 +26,6 @@ class Player {
 
     func createTeam() {
         repeat {
-            print(team.count)
             print("Please add another member to your team.")
             team.append(Character(name: readLine()!, gender: .female))
         } while team.count < 3

@@ -24,3 +24,13 @@ player2.checkIfNamesAreDifferent()
 
 print("Player 1 will now be refered to as \(player1.name)")
 print("Player 1 will now be refered to as \(player2.name)")
+
+print("Now, it's time to create your teams!")
+print("Let's start with you \(player1.name) ")
+player1.createTeam()
+print("Now it's your turn \(player2.name) ")
+player2.createTeam()
+
+
+
+
