@@ -12,6 +12,7 @@ class Character {
     enum Gender {
         case male, female
     }
+
     var name = ""
     var healthPoints: Int
     var gender: Gender

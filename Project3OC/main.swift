@@ -32,5 +32,13 @@ print("Now it's your turn \(player2.name) ")
 player2.createTeam()
 
 
+print("\(player1.team[0].name) has \(player1.team[0].healthPoints)")
+print("\(player1.team[1].name) has \(player1.team[1].healthPoints)")
+print("\(player1.team[2].name) has \(player1.team[2].healthPoints)")
+print("\(player2.team[0].name) has \(player2.team[0].healthPoints)")
+print("\(player2.team[1].name) has \(player2.team[1].healthPoints)")
+print("\(player2.team[2].name) has \(player2.team[2].healthPoints)")
 
+player1.team[Int(readLine()!)!].attack(target: player2.team[Int(readLine()!)!])
+print("\(player2.team[Int(readLine()!)!].name) has \(player2.team[Int(readLine()!)!].healthPoints) HP left")
 
