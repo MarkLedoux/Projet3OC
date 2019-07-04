@@ -118,5 +118,16 @@ class Player {
         print("Your team is made up of \(team[0].name), \(team[1].name), \(team[2].name)")
     }
 
+    func charactersDies() {
+        for teammates in team {
+            if teammates.healthPoints <= 0 {
+                team.remove(at: Int(Character))
+                print("Your character just died. You now have \(team.count) character still able to fight in your team")
+            } else {
+                print("Nothing significant to mention as of yet")
+            }
+        }
+    }
+
 
 }
