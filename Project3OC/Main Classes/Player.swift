@@ -117,4 +117,6 @@ class Player {
         print("Your team is ready to go.")
         print("Your team is made up of \(team[0].name), \(team[1].name), \(team[2].name)")
     }
+
+
 }

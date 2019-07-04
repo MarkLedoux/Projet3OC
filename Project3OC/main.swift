@@ -34,13 +34,21 @@ player2.createTeam()
 
 
 
-print("\(player1.team[0].name) has \(player1.team[0].healthPoints)")
-print("\(player1.team[1].name) has \(player1.team[1].healthPoints)")
-print("\(player1.team[2].name) has \(player1.team[2].healthPoints)")
-print("\(player2.team[0].name) has \(player2.team[0].healthPoints)")
-print("\(player2.team[1].name) has \(player2.team[1].healthPoints)")
-print("\(player2.team[2].name) has \(player2.team[2].healthPoints)")
+print("\(player1.team[0].name) has \(player1.team[0].healthPoints) HP")
+print("\(player1.team[1].name) has \(player1.team[1].healthPoints) HP")
+print("\(player1.team[2].name) has \(player1.team[2].healthPoints) HP")
+print("\(player2.team[0].name) has \(player2.team[0].healthPoints) HP")
+print("\(player2.team[1].name) has \(player2.team[1].healthPoints) HP")
+print("\(player2.team[2].name) has \(player2.team[2].healthPoints) HP")
 
-player1.team[Int(readLine()!)!].attack(target: player2.team[Int(readLine()!)!])
-print("\(player2.team[Int(readLine()!)!].name) has \(player2.team[Int(readLine()!)!].healthPoints) HP left")
+print("Now it's time to fight! \(player1.name), please choose who you want to attack in \(player2.name)'s team!")
+
+player1.team[0].attackTarget(target: player2.team[Int(readLine()!)!])
+player1.team[1].attackTarget(target: player2.team[Int(readLine()!)!])
+player1.team[2].attackTarget(target: player2.team[Int(readLine()!)!])
+print("Now it's your turn \(player2.name)! Please choose who you want to attack in \(player1.name)'s team!")
+player2.team[0].attackTarget(target: player1.team[Int(readLine()!)!])
+player2.team[0].attackTarget(target: player1.team[Int(readLine()!)!])
+player2.team[0].attackTarget(target: player1.team[Int(readLine()!)!])
+
 

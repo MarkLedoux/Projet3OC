@@ -30,11 +30,31 @@ class Character {
     func attack(target: Character) {
         if healthPoints > 0 {
             target.healthPoints -= self.weapon.damage
-            print("\(self.name) inflicted \(self.weapon.damage) damage points to \(target.name), now \(target.name) only has \(target.healthPoints) HP left. ")
+            print("\(self.name) used \(self.weapon.name) and inflicted \(self.weapon.damage) damage points to \(target.name), now \(target.name) only has \(target.healthPoints) HP left. ")
         } else {
             print("This character is already dead you cannot attack him anymore.")
         }
 
+    }
+
+    func attackTarget(target: Character) -> Character {
+       attack(target: target)
+        if let target = readLine() {
+            if let targetInt = Int(target) {
+                switch targetInt {
+                case 1 :
+                    return player2.team[0]
+                case 2 :
+                    return player2.team[1]
+                case 3 :
+                    return player2.team[2]
+                default :
+                    print("An error has occured, please enter 1, 2 or 3")
+
+                }
+            }
+        }
+        return attackTarget(target: target)
     }
 
 }
