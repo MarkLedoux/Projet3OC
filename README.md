@@ -118,3 +118,60 @@ Create class weapon and weapons similar to how I made characters
 For characters since I start with an empty array made of characters, when creating team, I use a func to first count the number of elements in the array and as long as the number of elements is below 3 I keep adding elements
 
 Steps required to complete the game 
+
+- Start Game by printing a welcome message 
+- Have player 1 create his name 
+- Have player 2 create his name
+- Check if the names are different and If the names are the same ask player 2 to choose a different name 
+- Create teams and make sure players can choose characters’ races and genders DELAYED
+- Create rounds in the game DELAYED
+- Code refactoring 
+
+Idea? Include the races in an array and make the player choose the race and weapon he wants to use
+What is needed to achieve that? 
+Linked the class inherited from character to the parameter so the references can be cycled through and the player can choose between all of them
+Or 
+Create an enum in which with types related to the classes inheriting from character and create a function called createCharacter that’ll make it possible to create a character directly in the team 
+
+Code to choose type 
+
+For teammates 
+
+
+TODO on July 2
+- Ask player to choose the type of his character(Human, Elf, Magician or Werebison)
+- Then ask player to choose the gender for the character 
+- Ask player to choose the name (this action is already done), check to see if the code will need changing 
+- Add character to the team
+
+Task 1 : CHOOSE CHARACTER TYPE
+- Specify which four types are available to choose 
+Code 
+
+After mentoring session 
+
+Refactor code dans le fichier game
+Faire en sorte qu’une fonction ne fasse qu’une seule chose à la fois 
+
+Step 1 Penser a la fonction static pour voir si le nom des joueurs et de chaque équipe, choix des personnages et choix des armes d’attaque
+Print sentence in setCharacterName and take or errors if player doesn’t enter a name
+
+Step 2 Gestion des combats
+
+Step 3 resultat du coffre avec une nouvelle arme
+
+
+IMPLEMENTING FIGHTS
+- Get one character of one team to attack a character on the other team
+- Get a character in one team to attack another after the player’s input 
+- Get the characters in one team to attack the other team in succession after player’s input 
+- make user input relevant not to the number used in the array of the team but corresponding to the numbers specified in the function  
+
+When a player attacks 
+- User input to choose target (1-3) 
+- Return the desired target(0-2) in array 
+- Attack 
+
+When HP are below zero character is dead
+- When hp fall below zero remove character index
+- Print that the character is dead 

@@ -118,15 +118,23 @@ class Player {
         print("Your team is made up of \(team[0].name), \(team[1].name), \(team[2].name)")
     }
 
-    func charactersDies() {
-        for teammates in team {
-            if teammates.healthPoints <= 0 {
-                team.remove(at: Int(Character))
-                print("Your character just died. You now have \(team.count) character still able to fight in your team")
+    func checkIfCharacterIsDeadOrNot() -> Bool {
+        var isDead: Bool = false
+
+
+        for teammate in team {
+            if teammate.healthPoints <= 0 {
+                isDead = true
+                print("\(teammate.name) jsut died. From now on he'll be out of this fight.")
+                let index = team.firstIndex(where: { $0 === teammate })
+                print(index!)
+                team.remove(at: index!)
+                print("You now have \(team.count) character still able to fight in your team")
             } else {
-                print("Nothing significant to mention as of yet")
+                isDead = false
             }
         }
+        return isDead
     }
 
 
