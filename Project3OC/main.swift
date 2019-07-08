@@ -43,12 +43,26 @@ print("\(player2.team[2].name) has \(player2.team[2].healthPoints) HP")
 
 print("Now it's time to fight! \(player1.name), please choose who you want to attack in \(player2.name)'s team!")
 
-player1.team[0].attackTarget(target: player2.team[Int(readLine()!)!])
-player1.team[1].attackTarget(target: player2.team[Int(readLine()!)!])
-player1.team[2].attackTarget(target: player2.team[Int(readLine()!)!])
+player1.team[0].attack(target: player2.attackTargetForPlayer1(target: player2.team[1]))
+
+print("Alright, let's get rolling, please choose a second character to attack in \(player2.name)'s team")
+
+player1.team[0].attack(target: player2.attackTargetForPlayer1(target: player2.team[1]))
+
+print("Now how about a third!")
+
+player1.team[0].attack(target: player2.attackTargetForPlayer1(target: player2.team[1]))
+
 print("Now it's your turn \(player2.name)! Please choose who you want to attack in \(player1.name)'s team!")
-player2.team[0].attackTarget(target: player1.team[Int(readLine()!)!])
-player2.team[0].attackTarget(target: player1.team[Int(readLine()!)!])
-player2.team[0].attackTarget(target: player1.team[Int(readLine()!)!])
+
+player2.team[0].attack(target: player1.attackTargetForPlayer2(target: player1.team[1]))
+
+print("Alright, let's get rolling, please choose a second character to attack in \(player2.name)'s team")
+
+player2.team[0].attack(target: player1.attackTargetForPlayer2(target: player1.team[1]))
+
+print("Now how about a third!")
+
+player2.team[0].attack(target: player1.attackTargetForPlayer2(target: player1.team[1]))
 
 

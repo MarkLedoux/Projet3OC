@@ -118,10 +118,51 @@ class Player {
         print("Your team is made up of \(team[0].name), \(team[1].name), \(team[2].name)")
     }
 
+    func attackTargetForPlayer1(target: Character) -> Character {
+        for _ in player2.team {
+        if let target = readLine() {
+            if let targetInt = Int(target) {
+                switch targetInt {
+                case 1 :
+                    return player2.team[0]
+                case 2 :
+                    return player2.team[1]
+                case 3 :
+                    return player2.team[2]
+                default :
+                    print("An error has occured, please enter 1, 2 or 3")
+                }
+
+                }
+            }
+        }
+        return attackTargetForPlayer1(target: target)
+    }
+
+    func attackTargetForPlayer2(target: Character) -> Character {
+        for _ in player1.team {
+            if let target = readLine() {
+                if let targetInt = Int(target) {
+                    switch targetInt {
+                    case 1 :
+                        return player1.team[0]
+                    case 2 :
+                        return player1.team[1]
+                    case 3 :
+                        return player1.team[2]
+                    default :
+                        print("An error has occured, please enter 1, 2 or 3")
+                    }
+
+                }
+            }
+        }
+        return attackTargetForPlayer2(target: target)
+    }
+
     func checkIfCharacterIsDeadOrNot() -> Bool {
         var isDead: Bool = false
-
-
+        
         for teammate in team {
             if teammate.healthPoints <= 0 {
                 isDead = true

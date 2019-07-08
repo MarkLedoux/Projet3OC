@@ -37,24 +37,4 @@ class Character {
 
     }
 
-    func attackTarget(target: Character) -> Character {
-       attack(target: target)
-        if let target = readLine() {
-            if let targetInt = Int(target) {
-                switch targetInt {
-                case 1 :
-                    return player2.team[0]
-                case 2 :
-                    return player2.team[1]
-                case 3 :
-                    return player2.team[2]
-                default :
-                    print("An error has occured, please enter 1, 2 or 3")
-
-                }
-            }
-        }
-        return attackTarget(target: target)
-    }
-
 }
