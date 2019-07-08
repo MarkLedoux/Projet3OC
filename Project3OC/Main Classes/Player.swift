@@ -24,6 +24,29 @@ class Player {
         }
     }
 
+    //class Player {
+    //    var name = ""
+    //    var team = [Character]()
+    //
+    //    init(name: String) {
+    //        self.name = name
+    //    }
+    //
+    //    var player = [Player]()
+    //
+    //    func createPlayers() {
+    //        repeat {
+    //            print("Time to choose names!")
+    //            print("Player 1, your turn!")
+    //            print("Please enter your name!")
+    //            player.append(Player(name: readLine()!))
+    //        } while player.count < 2
+    //        print("The two players are \(player[0].name) and \(player[1].name)")
+    //    }
+    //
+    //}
+
+
     private func getGenderCharacter() -> Character.Gender {
         print("Please choose your character's gender: M for male / F for female.")
         if let gender = readLine() {
@@ -166,7 +189,7 @@ class Player {
         for teammate in team {
             if teammate.healthPoints <= 0 {
                 isDead = true
-                print("\(teammate.name) jsut died. From now on he'll be out of this fight.")
+                print("\(teammate.name) just died. From now on he'll be out of this fight.")
                 let index = team.firstIndex(where: { $0 === teammate })
                 print(index!)
                 team.remove(at: index!)
@@ -176,6 +199,10 @@ class Player {
             }
         }
         return isDead
+    }
+
+    func gameLoop() {
+
     }
 
 

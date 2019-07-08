@@ -44,25 +44,29 @@ print("\(player2.team[2].name) has \(player2.team[2].healthPoints) HP")
 print("Now it's time to fight! \(player1.name), please choose who you want to attack in \(player2.name)'s team!")
 
 player1.team[0].attack(target: player2.attackTargetForPlayer1(target: player2.team[1]))
+player2.checkIfCharacterIsDeadOrNot()
 
 print("Alright, let's get rolling, please choose a second character to attack in \(player2.name)'s team")
 
 player1.team[0].attack(target: player2.attackTargetForPlayer1(target: player2.team[1]))
+player2.checkIfCharacterIsDeadOrNot()
 
 print("Now how about a third!")
 
 player1.team[0].attack(target: player2.attackTargetForPlayer1(target: player2.team[1]))
+player2.checkIfCharacterIsDeadOrNot()
 
 print("Now it's your turn \(player2.name)! Please choose who you want to attack in \(player1.name)'s team!")
 
 player2.team[0].attack(target: player1.attackTargetForPlayer2(target: player1.team[1]))
+player2.checkIfCharacterIsDeadOrNot()
 
 print("Alright, let's get rolling, please choose a second character to attack in \(player2.name)'s team")
 
 player2.team[0].attack(target: player1.attackTargetForPlayer2(target: player1.team[1]))
+player2.checkIfCharacterIsDeadOrNot()
 
 print("Now how about a third!")
 
 player2.team[0].attack(target: player1.attackTargetForPlayer2(target: player1.team[1]))
-
-
+player1.checkIfCharacterIsDeadOrNot()
