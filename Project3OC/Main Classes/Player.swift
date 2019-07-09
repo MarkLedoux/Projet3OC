@@ -11,40 +11,42 @@ import Foundation
 class Player {
     var name = ""
     var team = [Character]()
+     var player = [Player]()
 
     init(name: String) {
         self.name = name
     }
-    func checkIfNamesAreDifferent() {
-        if player1.name == player2.name {
-            print("You cannot have similar names, please choose a different name.")
-            player2 = Player(name: readLine()!)
-        } else {
-            print("Well done on choosing your names.")
+    func namePlayer() -> String {
+        let name = readLine()
+
+        var isInt: Bool {
+            return Int(name!) != nil
         }
+        let checkIfNameIsUnique = checkIfNamesAreDifferent(nameToBeChecked: name!)
+
+        if !checkIfNameIsUnique || isInt {
+        return namePlayer()
+        }
+        return name!.capitalized
+
     }
 
-    //class Player {
-    //    var name = ""
-    //    var team = [Character]()
-    //
-    //    init(name: String) {
-    //        self.name = name
-    //    }
-    //
-    //    var player = [Player]()
-    //
-    //    func createPlayers() {
-    //        repeat {
-    //            print("Time to choose names!")
-    //            print("Player 1, your turn!")
-    //            print("Please enter your name!")
-    //            player.append(Player(name: readLine()!))
-    //        } while player.count < 2
-    //        print("The two players are \(player[0].name) and \(player[1].name)")
-    //    }
-    //
-    //}
+    func checkIfNamesAreDifferent(nameToBeChecked: String) -> Bool {
+        repeat {
+            player.append(Player(name: ""))
+        } while player.count < 2
+        print("The players are \(player[0].name) and \(player[1].name)")
+
+        for playerNames in player {
+            if Player(name: playerNames.capitalized) == name.capitalized {
+                print("This name is already taken, please choose another name!")
+                return false
+            }
+        }
+        player.append(Player(name: name))
+        return true
+
+}
 
 
     private func getGenderCharacter() -> Character.Gender {
@@ -200,10 +202,5 @@ class Player {
         }
         return isDead
     }
-
-    func gameLoop() {
-
-    }
-
 
 }

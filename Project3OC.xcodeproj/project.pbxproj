@@ -28,6 +28,7 @@
 		B3B0ADB222AAB71E004EA0D3 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B0ADB122AAB71E004EA0D3 /* Game.swift */; };
 		B3B23AEE22C4AC7200E20FF0 /* DragonScaleElvenSword.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B23AED22C4AC7200E20FF0 /* DragonScaleElvenSword.swift */; };
 		B3B23AF022C4ACB400E20FF0 /* CombinedElementalAttack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B23AEF22C4ACB400E20FF0 /* CombinedElementalAttack.swift */; };
+		B3E622D122D432D600BECA80 /* GameTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E622D022D432D600BECA80 /* GameTool.swift */; };
 		B3F66F3B22BB7F98009D5664 /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F66F3A22BB7F98009D5664 /* Weapon.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		B3B0ADB122AAB71E004EA0D3 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		B3B23AED22C4AC7200E20FF0 /* DragonScaleElvenSword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonScaleElvenSword.swift; sourceTree = "<group>"; };
 		B3B23AEF22C4ACB400E20FF0 /* CombinedElementalAttack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinedElementalAttack.swift; sourceTree = "<group>"; };
+		B3E622D022D432D600BECA80 /* GameTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTool.swift; sourceTree = "<group>"; };
 		B3F66F3A22BB7F98009D5664 /* Weapon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -175,6 +177,7 @@
 			children = (
 				B375D3DB22A826D100B568DC /* Player.swift */,
 				B3B0ADB122AAB71E004EA0D3 /* Game.swift */,
+				B3E622D022D432D600BECA80 /* GameTool.swift */,
 				B375D3DF22A8270100B568DC /* Character.swift */,
 				B3F66F3A22BB7F98009D5664 /* Weapon.swift */,
 			);
@@ -244,6 +247,7 @@
 				B33269DB22B9567200E58572 /* Magician.swift in Sources */,
 				B3094FB822C36008008F4113 /* ElectricalAttack.swift in Sources */,
 				B3094FAC22C35E70008F4113 /* Knife.swift in Sources */,
+				B3E622D122D432D600BECA80 /* GameTool.swift in Sources */,
 				B33269D722B9565000E58572 /* Elf.swift in Sources */,
 				B3094FA822C35E46008F4113 /* Bow.swift in Sources */,
 				B3094FB022C35E94008F4113 /* Javelin.swift in Sources */,
