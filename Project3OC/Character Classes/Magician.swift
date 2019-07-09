@@ -17,8 +17,6 @@ class Magician: Character {
             self.healthPoints = 250
         }
         self.weapon = Healing(name: "Healing", damage: 140)
-        self.weapon = FireAttack(name: "Fire Attack", damage: 140)
-        self.weapon = WaterAttack(name: "Water Attack", damage: 130)
         self.weapon = ElectricalAttack(name: "Electrical Attack", damage: 180)
         print("Your character is ready to go!")
     }

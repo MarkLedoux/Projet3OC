@@ -25,6 +25,7 @@ class Game {
     func gameLoop() {
 
         while player1.team.count > 0 && player2.team.count > 0 {
+            
             player1.team[0].attack(target: player2.attackTargetForPlayer1(target: player2.team[1]))
             player2.checkIfCharacterIsDeadOrNot()
 

@@ -22,9 +22,9 @@ class Player {
         var isInt: Bool {
             return Int(name!) != nil
         }
-        let checkIfNameIsUnique = checkIfNamesAreDifferent(nameToBeChecked: name!)
+        let isUnique = checkIfNamesAreDifferent(nameToBeChecked: name!)
 
-        if !checkIfNameIsUnique || isInt {
+        if !isUnique || isInt {
         return namePlayer()
         }
         return name!.capitalized
@@ -38,7 +38,7 @@ class Player {
         print("The players are \(player[0].name) and \(player[1].name)")
 
         for playerNames in player {
-            if Player(name: playerNames.capitalized) == name.capitalized {
+            if playerNames.capitalized == name.capitalized {
                 print("This name is already taken, please choose another name!")
                 return false
             }
@@ -185,22 +185,17 @@ class Player {
         return attackTargetForPlayer2(target: target)
     }
 
-    func checkIfCharacterIsDeadOrNot() -> Bool {
-        var isDead: Bool = false
+    func checkIfCharacterIsDeadOrNot() {
         
         for teammate in team {
             if teammate.healthPoints <= 0 {
-                isDead = true
                 print("\(teammate.name) just died. From now on he'll be out of this fight.")
                 let index = team.firstIndex(where: { $0 === teammate })
                 print(index!)
                 team.remove(at: index!)
                 print("You now have \(team.count) character still able to fight in your team")
-            } else {
-                isDead = false
             }
         }
-        return isDead
     }
 
 }

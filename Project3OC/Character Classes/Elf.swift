@@ -11,8 +11,7 @@ import Cocoa
 class Elf: Character {
     override init(name: String, gender: Gender) {
         super.init(name: name, gender: gender)
-        self.weapon = Bow(name: "Bow", damage: 50)
-        if (self.gender == .female) {
+                if (self.gender == .female) {
             self.healthPoints = 750
             self.weapon = Knife(name: "Knife", damage: 80)
         } else {
