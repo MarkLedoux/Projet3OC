@@ -11,7 +11,7 @@ import Foundation
 class Player {
     var name = ""
     var team = [Character]()
-     var player = [Player]()
+    var player = [Player]()
 
     init(name: String) {
         self.name = name
@@ -166,6 +166,20 @@ class Player {
 
     func attackTargetForPlayer2(target: Character) -> Character {
         for _ in player1.team {
+            if let selectedCharacter = readLine() {
+                if let selectedCharacterInt = Int(selectedCharacter) {
+                    switch selectedCharacterInt {
+                    case 1 :
+                        return player1.team[0]
+                    case 2 :
+                        return player1.team[1]
+                    case 3 :
+                        return player1.team[2]
+                    default :
+                        print("An error has occured, please enter 1, 2 or 3")
+                    }
+                }
+            }
             if let target = readLine() {
                 if let targetInt = Int(target) {
                     switch targetInt {

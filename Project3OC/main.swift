@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 var welcomeToGame = "Welcome to the Ultimate Fantasy Game!"
     print(welcomeToGame)
 print("Time to choose names!")

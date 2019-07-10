@@ -9,6 +9,10 @@
 import Cocoa
 
 class GameTool {
-
+    // simple print statements used once at the beginning of the game
+    static func gameIntro() {
+        print("Welcome to the Ultimate Fantasy Game!")
+        print("Time to choose names!")
+    }
 
 }
