@@ -11,13 +11,9 @@ import Foundation
 class Player {
 
     // MARK: Properties
-    var name = ""
+    static var name = ""
     var team = [Character]()
     var player = [Player]()
-
-    init(name: String) {
-        self.name = name
-    }
 
     // MARK: Logic
 
@@ -40,17 +36,17 @@ class Player {
     //logic to check if the player names are different or not
     func checkIfNamesAreDifferent(nameToBeChecked: String) -> Bool {
         repeat {
-            player.append(Player(name: ""))
+            player.append(Player())
         } while player.count < 2
-        print("The players are \(player[0].name) and \(player[1].name)")
+        print("The players are \(Player.name) and \(Player.name)")
 
-        for playerNames in player {
-            if playerNames.capitalized == name.capitalized {
+        for _ in player {
+            if Player.name.capitalized == Player.name.capitalized {
                 print("This name is already taken, please choose another name!")
                 return false
             }
         }
-        player.append(Player(name: name))
+        player.append(Player())
         return true
 
 }

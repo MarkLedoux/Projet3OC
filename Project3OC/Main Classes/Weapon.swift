@@ -9,6 +9,7 @@
 import Cocoa
 
 class Weapon {
+    // MARK: Properties for the weapons used in the game 
     var name: String
     var damage: Int
 

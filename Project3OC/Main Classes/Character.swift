@@ -9,6 +9,7 @@
 import Foundation
 
 class Character {
+    // MARK: Properties
     enum Gender {
         case male, female
     }
@@ -26,7 +27,9 @@ class Character {
         self.gender = .male
         self.weapon = Weapon(name: "Large Sword", damage: 150)
     }
+    // MARK: Logic
 
+    //attacking the other's player's character and setting damage
     func attack(target: Character) {
         if healthPoints > 0 {
             target.healthPoints -= self.weapon.damage
