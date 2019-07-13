@@ -9,6 +9,8 @@
 import Foundation
 
 class Player {
+
+    // MARK: Properties
     var name = ""
     var team = [Character]()
     var player = [Player]()
@@ -16,6 +18,10 @@ class Player {
     init(name: String) {
         self.name = name
     }
+
+    // MARK: Logic
+
+    //return of a string for the player name and checking if the names are different through a boolean when naming the players at the beginning of the game
     func namePlayer() -> String {
         let name = readLine()
 
@@ -31,6 +37,7 @@ class Player {
 
     }
 
+    //logic to check if the player names are different or not
     func checkIfNamesAreDifferent(nameToBeChecked: String) -> Bool {
         repeat {
             player.append(Player(name: ""))
@@ -49,6 +56,7 @@ class Player {
 }
 
 
+    //asking the player to choose what gender he wants for his character and setting the possible choice to recognize uppercased and lowercased letters
     private func getGenderCharacter() -> Character.Gender {
         print("Please choose your character's gender: M for male / F for female.")
         if let gender = readLine() {
@@ -65,6 +73,7 @@ class Player {
         return getGenderCharacter()
     }
 
+    //letting the player choose which type he wants for his characters
     private func getCharacterType() -> String {
         print("""
             Please choose your character's type :
@@ -104,6 +113,7 @@ class Player {
         return getCharacterType()
     }
 
+    //finally, after choosing the gender and type of his character, the player is then asked to supply a name for the character he's creating
     private func getCharacterName() -> String {
         print("Please enter a name for your character")
         if let name = readLine() {
@@ -112,6 +122,7 @@ class Player {
         return getCharacterName()
     }
 
+    //gathering all the data that was the input before in order to access it for the character's addition to the team
     private func setCharacter(name: String, type: String, gender: Character.Gender) -> Character {
         switch type {
         case "Human":
@@ -130,6 +141,7 @@ class Player {
 
 
 
+    //using the data gathered in the previous function, adding a character into an array until the array reaches a size of three on its index
     func createTeam() {
         repeat {
             let type = getCharacterType()
@@ -143,6 +155,7 @@ class Player {
         print("Your team is made up of \(team[0].name), \(team[1].name), \(team[2].name)")
     }
 
+    //choosing the character the attacking player - first player -  wants to use to attack the other player
     func attackTargetForPlayer1(target: Character) -> Character {
         for _ in player2.team {
         if let target = readLine() {
@@ -164,6 +177,7 @@ class Player {
         return attackTargetForPlayer1(target: target)
     }
 
+    //setting the character the attacking player - second player - wants to use to attack the other player
     func attackTargetForPlayer2(target: Character) -> Character {
         for _ in player1.team {
             if let selectedCharacter = readLine() {
@@ -199,7 +213,8 @@ class Player {
         return attackTargetForPlayer2(target: target)
     }
 
-    func checkIfCharacterIsDeadOrNot() {
+    //makes it possible to remove the character at the array's index where the character's HP are less or equal to zero
+    func removeCharacterWhenDead() {
         
         for teammate in team {
             if teammate.healthPoints <= 0 {
