@@ -175,3 +175,19 @@ When a player attacks
 When HP are below zero character is dead
 - When hp fall below zero remove character index
 - Print that the character is dead 
+
+For fights use a for in loop 
+Split into two methods for attack target for player 
+- One to list a team’s members
+- Second to select the characters
+- Count the number of characters in array and select number must be inferior or equal to the number of index in array 
+- Use static var for player to store all the names already used then being able to return strings when checking If the names are different
+- In game define an attacker and defender different each turn, extract character from player and check the class of the character 
+Change name to remove dead character
+
+Call remove dead character only when the character hp are below zero
+Make it possible for character to choose weapon
+Update character’s description with more details 
+When only one character in team no choice possible and select for the player by default 
+Penser au principe de RESPONSABILITÉ UNI    QUE des fonctions 
+Commenter le plus possible
