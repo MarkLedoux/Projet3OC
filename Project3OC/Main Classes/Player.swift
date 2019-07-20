@@ -11,43 +11,36 @@ import Foundation
 class Player {
 
     // MARK: Properties
-    static var name = ""
+    var name = ""
     var team = [Character]()
-    var player = [Player]()
+    static var playerNames = [String]()
 
     // MARK: Logic
 
     //return of a string for the player name and checking if the names are different through a boolean when naming the players at the beginning of the game
     func namePlayer() -> String {
-        let name = readLine()
+        if var name = readLine() {
+            var isInt: Bool {
+            return Int(name) != nil
+            }
+            let isUnique = checkIfNamesAreDifferent(nameToBeChecked: name.capitalized)
+            print(isUnique)
 
-        var isInt: Bool {
-            return Int(name!) != nil
-        }
-        let isUnique = checkIfNamesAreDifferent(nameToBeChecked: name!)
-
-        if !isUnique || isInt {
+            if !isUnique {
+                print("An error occured, please enter a name which does not already exist.")
+               return namePlayer()
+            }
+            self.name = name
+            Player.playerNames.append(name.capitalized)
+            return name
+            }
+        print("An error occured, please enter a name which does not already exist.")
         return namePlayer()
-        }
-        return name!.capitalized
-
     }
 
     //logic to check if the player names are different or not
     func checkIfNamesAreDifferent(nameToBeChecked: String) -> Bool {
-        repeat {
-            player.append(Player())
-        } while player.count < 2
-        print("The players are \(Player.name) and \(Player.name)")
-
-        for _ in player {
-            if Player.name.capitalized == Player.name.capitalized {
-                print("This name is already taken, please choose another name!")
-                return false
-            }
-        }
-        player.append(Player())
-        return true
+        return !Player.playerNames.contains(nameToBeChecked)
 
 }
 

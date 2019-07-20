@@ -25,38 +25,7 @@ class Game {
     //looping the fight action TODO: refactor fight action
     func gameLoop() {
 
-        while player1.team.count > 0 && player2.team.count > 0 {
-            
-            player1.team[0].attack(target: player2.attackTargetForPlayer1(target: player2.team[1]))
-            player2.removeCharacterWhenDead()
-
-            print("Alright, let's get rolling, please choose a second character to attack in \(player.name)'s team")
-
-            player1.team[0].attack(target: player2.attackTargetForPlayer1(target: player2.team[1]))
-            player2.removeCharacterWhenDead()
-
-            print("Now how about a third!")
-
-            player1.team[0].attack(target: player2.attackTargetForPlayer1(target: player2.team[1]))
-            player2.removeCharacterWhenDead()
-
-            print("Now it's your turn \(player2.name)! Please choose who you want to attack in \(player1.name)'s team!")
-
-            player2.team[0].attack(target: player1.attackTargetForPlayer2(target: player1.team[1]))
-            player2.removeCharacterWhenDead()
-
-            print("Alright, let's get rolling, please choose a second character to attack in \(player2.name)'s team")
-
-            player2.team[0].attack(target: player1.attackTargetForPlayer2(target: player1.team[1]))
-            player2.removeCharacterWhenDead()
-
-            print("Now how about a third!")
-
-            player2.team[0].attack(target: player1.attackTargetForPlayer2(target: player1.team[1]))
-            player1.removeCharacterWhenDead()
         }
-
-    }
 
     
 }
