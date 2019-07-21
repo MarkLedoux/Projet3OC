@@ -22,10 +22,7 @@ class Game {
         print("Better luck next time!")
         return false
     }
-    //looping the fight action TODO: refactor fight action
-    func gameLoop() {
-
-        }
+   
 
     
 }

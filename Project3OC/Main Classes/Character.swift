@@ -41,30 +41,4 @@ class Character {
 
     }
 
-    func nameCharacter() -> String {
-        if var name = readLine() {
-            var isInt: Bool {
-                return Int(name) != nil
-            }
-            let isUnique = checkIfNamesAreDifferent(nameToBeChecked: name.capitalized)
-            print(isUnique)
-
-            if !isUnique {
-                print("An error has occured, please enter a name which does not already exist for your character!")
-                return nameCharacter()
-            }
-            self.name = name
-            Character.characterNames.append(name.capitalized)
-            return name
-        }
-        print("An error occured, please enter a name which does not already exist for your character.")
-        return nameCharacter()
-    }
-
-    //logic to check if the character names are different or not in all of the teams
-    func checkIfNamesAreDifferent(nameToBeChecked: String) -> Bool {
-        return !Character.characterNames.contains(nameToBeChecked)
-
-    }
-
 }
