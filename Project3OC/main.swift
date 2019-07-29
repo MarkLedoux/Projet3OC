@@ -41,9 +41,6 @@ print("\(player2.team[0].name) has \(player2.team[0].healthPoints) HP")
 print("\(player2.team[1].name) has \(player2.team[1].healthPoints) HP")
 print("\(player2.team[2].name) has \(player2.team[2].healthPoints) HP")
 
-print("Now it's time to fight! \(player1.name), please choose who you want to attack in \(player2.name)'s team!")
+print("Now it's time to fight! \(player1.name), please choose the character you want to use to attack!") //bug as instead of showing the player's name it shows the name of the last character in each player's team
 
-var attackingCharacter = player1.selectCharacter(in: player1)
-var defendingCharacter = player1.selectCharacter(in: player2)
-attackingCharacter.attack(target: defendingCharacter)
-
+player1.fightingLoop()
