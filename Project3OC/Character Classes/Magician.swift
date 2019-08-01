@@ -9,6 +9,7 @@
 import Cocoa
 
 class Magician: Character {
+    var heal = 140
     override init(name: String, gender: Gender) {
         super.init(name: name, gender: gender)
         if (self.gender == .female) {
@@ -16,8 +17,17 @@ class Magician: Character {
         } else {
             self.healthPoints = 250
         }
-        self.weapon = Healing(name: "Healing", damage: 140)
         self.weapon = ElectricalAttack(name: "Electrical Attack", damage: 180)
         print("Your character is ready to go!")
+    }
+
+    func heal(target: Character) {
+        if healthPoints > 0 {
+            target.healthPoints += heal
+            print("\(self.name) used Healing and healed \(target.name) by \(heal) points, now \(target.name) has \(target.healthPoints) HP left. ")
+        } else {
+            print("This character cannot be healed.")
+        }
+
     }
 }
