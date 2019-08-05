@@ -8,6 +8,8 @@
 
 import Foundation
 class Game {
+    
+
     //roll of dice displayed as two random numbers between 1-6 and if the number fall on 6 the treasure box appears
    static func dropEqualsRolls() -> Bool {
         let firstRoll = Int.random(in: 1...6)

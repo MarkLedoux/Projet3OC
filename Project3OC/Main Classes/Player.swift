@@ -17,33 +17,6 @@ class Player {
 
     // MARK: Logic
 
-    //return of a string for the player name and checking if the names are different through a boolean when naming the players at the beginning of the game
-    func namePlayer() -> String {
-        if var name = readLine() {
-            var isInt: Bool {
-            return Int(name) != nil
-            }
-            let isUnique = checkIfNamesAreDifferent(nameToBeChecked: name.capitalized)
-
-            if !isUnique {
-                print("An error occured, please enter a name which does not already exist.")
-               return namePlayer()
-            }
-            self.name = name
-            Player.playerNames.append(name.capitalized)
-            return name
-            }
-        print("An error occured, please enter a name which does not already exist.")
-        return namePlayer()
-    }
-
-    //logic to check if the player names are different or not
-    func checkIfNamesAreDifferent(nameToBeChecked: String) -> Bool {
-        return !Player.playerNames.contains(nameToBeChecked)
-
-}
-
-
     //asking the player to choose what gender he wants for his character and setting the possible choice to recognize uppercased and lowercased letters
     private func getGenderCharacter() -> Character.Gender {
         print("Please choose your character's gender: M for male / F for female.")
@@ -81,8 +54,7 @@ class Player {
                 675 to 775 HP depending on gender
                 Two gender specific weapons of 140 and 150 damage points 110 or 120
 """)
-        if let type = readLine() {
-            if let typeInt = Int(type) {
+        let typeInt = GameTool.getUserChoice(message: "An error has occured, please enter 1, 2, 3 or 4", range: (min:1, max: 4))
                 switch typeInt {
                 case 1 :
                     return "Human"
@@ -94,9 +66,6 @@ class Player {
                     return "Werebison"
                 default :
                     print("An error has occured, please enter 1, 2, 3 or 4")
-
-                }
-            }
         }
         return getCharacterType()
     }
@@ -104,32 +73,7 @@ class Player {
     //finally, after choosing the gender and type of his character, the player is then asked to supply a name for the character he's creating
     private func getCharacterName() -> String {
         print("Please enter a name for your character")
-        return nameCharacter()
-
-    }
-
-    func nameCharacter() -> String {
-        if var name = readLine() {
-            var isInt: Bool {
-                return Int(name) != nil
-            }
-            let isUnique = checkIfNamesAreDifferentForCharacter(nameToBeChecked: name.capitalized)
-
-            if !isUnique {
-                print("An error has occured, please enter a name which does not already exist for your character!")
-                return nameCharacter()
-            }
-            self.name = name
-            Character.characterNames.append(name.capitalized)
-            return name
-        }
-        print("An error occured, please enter a name which does not already exist for your character.")
-        return nameCharacter()
-    }
-
-    //logic to check if the character names are different or not in all of the teams
-    func checkIfNamesAreDifferentForCharacter(nameToBeChecked: String) -> Bool {
-        return !Character.characterNames.contains(nameToBeChecked)
+        return GameTool.naming()
 
     }
 
@@ -166,162 +110,82 @@ class Player {
         print("Your team is made up of \(team[0].name), \(team[1].name), \(team[2].name)")
     }
 
-    //choosing the character the attacking player - first player -  wants to use to attack the other player
-    func attackTargetForPlayer1(target: Character) -> Character {
-        for _ in player2.team {
-        if let target = readLine() {
-            if let targetInt = Int(target) {
-                switch targetInt {
-                case 1 :
-                    return player2.team[0]
-                case 2 :
-                    return player2.team[1]
-                case 3 :
-                    return player2.team[2]
-                default :
-                    print("An error has occured, please enter 1, 2 or 3")
-                }
-
-                }
-            }
-        }
-        return attackTargetForPlayer1(target: target)
-    }
-
-    //setting the character the attacking player - second player - wants to use to attack the other player
-    func attackTargetForPlayer2(target: Character) -> Character {
-        for _ in player1.team {
-            if let selectedCharacter = readLine() {
-                if let selectedCharacterInt = Int(selectedCharacter) {
-                    switch selectedCharacterInt {
-                    case 1 :
-                        return player1.team[0]
-                    case 2 :
-                        return player1.team[1]
-                    case 3 :
-                        return player1.team[2]
-                    default :
-                        print("An error has occured, please enter 1, 2 or 3")
-                    }
-                }
-            }
-            if let target = readLine() {
-                if let targetInt = Int(target) {
-                    switch targetInt {
-                    case 1 :
-                        return player1.team[0]
-                    case 2 :
-                        return player1.team[1]
-                    case 3 :
-                        return player1.team[2]
-                    default :
-                        print("An error has occured, please enter 1, 2 or 3")
-                    }
-
-                }
-            }
-        }
-        return attackTargetForPlayer2(target: target)
-    }
-
     //makes it possible to remove the character at the array's index where the character's HP are less or equal to zero
-    func removeCharacterWhenDead() {
+    func removeCharacterWhenDead() { //error when the first or second members in the array are taken out
         
         for teammate in team {
             if teammate.healthPoints <= 0 {
-                print("\(teammate.name) just died. From now on he'll be out of this fight.")
+                print("\(teammate.name) just died. From now on he'll be out of this fight.") //TODO: change text to better reflect the changes that happen during the fight
                 let index = team.firstIndex(where: { $0 === teammate })
-                print(index!)
                 team.remove(at: index!)
                 print("You now have \(team.count) character still able to fight in your team")
             }
         }
     }
 
-    //select which character the attacking player is going to choose for his attack
-    func selectCharacterForAttack() -> Character {
-        for characters in team {
-        print("""
-            Please choose the character that you want to use for your attack :
-            Keep the game fair and use only each character once when it's your time to attack, it'll make the game more fun too
-            Your team is made up of \(team[0].name), \(team[1].name), \(team[2].name)
-""")
-            if team.count == 3 {
-        if let characterChoice = readLine() {
-            if let choiceInt = Int(characterChoice) {
-                switch choiceInt {
-                case 1 :
-                    return player1.team[0]
-                case 2 :
-                    return player1.team[1]
-                case 3 :
-                    return player1.team[2]
-                default :
-                    print("An error has occured, please enter 1, 2 or 3")
-                }
-            } else if team.count == 2 {
-                let choiceInt = Int(characterChoice)
-                switch choiceInt {
-                case 1 :
-                    return player1.team[0]
-                case 2 :
-                    return player1.team[1]
-                case 3 :
-                    return player1.team[2]
-                default :
-                    print("An error has occured, please enter 1 or 2")
-                }
-            } else {
-                return player1.team[0]
-
-            }
-                }
-            }
+    //select character
+    func selectCharacter(in player: Player) -> Character {
+        print("Please choose a characrer among the characters in the following list.")
+        for (index, character) in player.team.enumerated() {
+            print("\(index + 1) - \(character.name) has \(character.healthPoints) HP and has a weapon which can inflict \(character.weapon.damage) damage")
         }
-        return selectCharacterForAttack()
+        let choiceInt = GameTool.getUserChoice(message: "Error, please choose a number in accordance to the numbers displayed above.", range: (min: 1, max: 3))
+                if (player.team.count >= choiceInt) && (choiceInt > 0) {
+                    return player.team[choiceInt-1]
+                } else {
+                    print("Error please please choose a number that corresponds to the ones displayed above.")
+        }
+        return selectCharacter(in: player)
+
+    }
+    //make the players attack three times in a row
+
+    
+    func fightingLoop() {
+        var attackingTeam = player1
+        var defendingTeam = player2
+        var round = 1
+
+        while player1.team.count >= 1 && player2.team.count >= 1 {
+            print("It's time for round \(round)!")
+
+            let attackingCharacter = attackingTeam.selectCharacter(in: attackingTeam)
+//            Game.dropEqualsRolls()
+//
+//            if dropEqualsRolls = true {
+//
+//            }
+
+            if let magician = attackingCharacter as? Magician {
+                let userAnswer = GameTool.getUserChoice(message: "Choose what you want your magician to do! 1: Attack or 2: Heal!", range: (min: 1, max: 2))
+                    switch userAnswer {
+                    case 1:
+                        let defendingCharacter = attackingTeam.selectCharacter(in: defendingTeam)
+                        attackingCharacter.attack(target: defendingCharacter)
+
+                    case 2:
+                        let healedCharacter = attackingTeam.selectCharacter(in: attackingTeam)
+                        magician.heal(target: healedCharacter)
+
+                    default:
+                        print("Error, something wrong happened.")
+                    }
+
+            } else {
+                let defendingCharacter = attackingTeam.selectCharacter(in: defendingTeam)
+                attackingCharacter.attack(target: defendingCharacter)
+                defendingTeam.removeCharacterWhenDead()
+            }
+            round += 1
+            swap(&attackingTeam, &defendingTeam)
+
+        }
+        gameOver()
+
     }
 
-    //select which character the attacking player is going to attack
-    func selectCharacterToAttack() -> Character {
-        for characters in team {
-            print("""
-                Please choose the character that you want to use for your attack :
-                Keep the game fair and use only each character once when it's your time to attack, it'll make the game more fun too
-                The opponent's team is made up of \(team[0].name), \(team[1].name), \(team[2].name)
-                """)
-            if team.count == 3 {
-                if let characterChoice = readLine() {
-                    if let choiceInt = Int(characterChoice) {
-                        switch choiceInt {
-                        case 1 :
-                            return player2.team[0]
-                        case 2 :
-                            return player2.team[1]
-                        case 3 :
-                            return player2.team[2]
-                        default :
-                            print("An error has occured, please enter 1, 2 or 3")
-                        }
-                    } else if team.count == 2 {
-                        let choiceInt = Int(characterChoice)
-                        switch choiceInt {
-                        case 1 :
-                            return player2.team[0]
-                        case 2 :
-                            return player2.team[1]
-                        case 3 :
-                            return player2.team[2]
-                        default :
-                            print("An error has occured, please enter 1 or 2")
-                        }
-                    } else {
-                        return player2.team[0]
-
-                    }
-                }
-            }
-        }
-        return selectCharacterToAttack()
+    func gameOver() {
+        print("The game is over. The winner is nantoka")
     }
 
 }
