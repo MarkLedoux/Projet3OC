@@ -42,7 +42,7 @@ class GameTool {
                 if entryInt >= range.min && entryInt <= range.max {
                     return entryInt
                 } else {
-                    print("Error, please enter a number between \(range.min) and \(range.max)")
+                    print("Please enter a number between \(range.min) and \(range.max)")
                     return getUserChoice(message: message, range: range)
                 }
             }
@@ -50,6 +50,23 @@ class GameTool {
         print("Error, please enter a number between \(range.min) and \(range.max)")
         return getUserChoice(message: message, range: range)
 
+    }
+
+    //roll of dice displayed as two random numbers between 1-6 and if the number fall on 6 the treasure box appears
+    static func dropEqualsRolls() -> Bool {
+        let firstRoll = Int.random(in: 1...6)
+        let secondRoll = Int.random(in: 1...6)
+        print("\(firstRoll) \(secondRoll)")
+
+        if firstRoll == 6 && secondRoll == 6 {
+            print("The dice fell on \(firstRoll) and \(secondRoll)")
+            print("You win!")
+
+            return true
+        }
+        print("The dice fell on \(firstRoll) and \(secondRoll)")
+        print("Better luck next time!")
+        return false
     }
 
 }

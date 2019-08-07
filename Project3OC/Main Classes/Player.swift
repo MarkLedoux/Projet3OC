@@ -54,7 +54,7 @@ class Player {
                 675 to 775 HP depending on gender
                 Two gender specific weapons of 140 and 150 damage points 110 or 120
 """)
-        let typeInt = GameTool.getUserChoice(message: "An error has occured, please enter 1, 2, 3 or 4", range: (min:1, max: 4))
+        let typeInt = GameTool.getUserChoice(message: "Please enter 1, 2, 3 or 4", range: (min:1, max: 4))
                 switch typeInt {
                 case 1 :
                     return "Human"
@@ -125,11 +125,11 @@ class Player {
 
     //select character
     func selectCharacter(in player: Player) -> Character {
-        print("Please choose a characrer among the characters in the following list.")
+        print("Please choose a character among the characters in the following list.")
         for (index, character) in player.team.enumerated() {
             print("\(index + 1) - \(character.name) has \(character.healthPoints) HP and has a weapon which can inflict \(character.weapon.damage) damage")
         }
-        let choiceInt = GameTool.getUserChoice(message: "Error, please choose a number in accordance to the numbers displayed above.", range: (min: 1, max: 3))
+        let choiceInt = GameTool.getUserChoice(message: "Please choose a number in accordance to the numbers displayed above.", range: (min: 1, max: 3))
                 if (player.team.count >= choiceInt) && (choiceInt > 0) {
                     return player.team[choiceInt-1]
                 } else {
@@ -162,6 +162,7 @@ class Player {
                     case 1:
                         let defendingCharacter = attackingTeam.selectCharacter(in: defendingTeam)
                         attackingCharacter.attack(target: defendingCharacter)
+                        defendingTeam.removeCharacterWhenDead()
 
                     case 2:
                         let healedCharacter = attackingTeam.selectCharacter(in: attackingTeam)
@@ -176,8 +177,8 @@ class Player {
                 attackingCharacter.attack(target: defendingCharacter)
                 defendingTeam.removeCharacterWhenDead()
             }
-            round += 1
             swap(&attackingTeam, &defendingTeam)
+            round += 1
 
         }
         gameOver()

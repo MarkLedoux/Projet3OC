@@ -21,7 +21,6 @@
 		B375D3D522A8267600B568DC /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B375D3D422A8267600B568DC /* main.swift */; };
 		B375D3DC22A826D100B568DC /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = B375D3DB22A826D100B568DC /* Player.swift */; };
 		B375D3E022A8270100B568DC /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = B375D3DF22A8270100B568DC /* Character.swift */; };
-		B3B0ADB222AAB71E004EA0D3 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B0ADB122AAB71E004EA0D3 /* Game.swift */; };
 		B3B23AEE22C4AC7200E20FF0 /* DragonScaleElvenSword.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B23AED22C4AC7200E20FF0 /* DragonScaleElvenSword.swift */; };
 		B3B23AF022C4ACB400E20FF0 /* CombinedElementalAttack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B23AEF22C4ACB400E20FF0 /* CombinedElementalAttack.swift */; };
 		B3E622D122D432D600BECA80 /* GameTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E622D022D432D600BECA80 /* GameTool.swift */; };
@@ -56,7 +55,6 @@
 		B375D3D422A8267600B568DC /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		B375D3DB22A826D100B568DC /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		B375D3DF22A8270100B568DC /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
-		B3B0ADB122AAB71E004EA0D3 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		B3B23AED22C4AC7200E20FF0 /* DragonScaleElvenSword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragonScaleElvenSword.swift; sourceTree = "<group>"; };
 		B3B23AEF22C4ACB400E20FF0 /* CombinedElementalAttack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinedElementalAttack.swift; sourceTree = "<group>"; };
 		B3E622D022D432D600BECA80 /* GameTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTool.swift; sourceTree = "<group>"; };
@@ -164,7 +162,6 @@
 			isa = PBXGroup;
 			children = (
 				B375D3DB22A826D100B568DC /* Player.swift */,
-				B3B0ADB122AAB71E004EA0D3 /* Game.swift */,
 				B3E622D022D432D600BECA80 /* GameTool.swift */,
 				B375D3DF22A8270100B568DC /* Character.swift */,
 				B3F66F3A22BB7F98009D5664 /* Weapon.swift */,
@@ -239,7 +236,6 @@
 				B3E622D122D432D600BECA80 /* GameTool.swift in Sources */,
 				B33269D722B9565000E58572 /* Elf.swift in Sources */,
 				B3094FB022C35E94008F4113 /* Javelin.swift in Sources */,
-				B3B0ADB222AAB71E004EA0D3 /* Game.swift in Sources */,
 				B3F66F3B22BB7F98009D5664 /* Weapon.swift in Sources */,
 				B3550BD722C0CE40002C4ABA /* LargeSword.swift in Sources */,
 				B375D3D522A8267600B568DC /* main.swift in Sources */,
