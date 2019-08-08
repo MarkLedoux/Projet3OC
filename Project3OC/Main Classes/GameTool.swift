@@ -54,17 +54,16 @@ class GameTool {
 
     //roll of dice displayed as two random numbers between 1-6 and if the number fall on 6 the treasure box appears
     static func dropEqualsRolls() -> Bool {
-        let firstRoll = Int.random(in: 1...6)
-        let secondRoll = Int.random(in: 1...6)
-        print("\(firstRoll) \(secondRoll)")
+        let roll = Int.random(in: 1...6)
 
-        if firstRoll == 6 && secondRoll == 6 {
-            print("The dice fell on \(firstRoll) and \(secondRoll)")
+        if roll == 6 {
+            print("The dice fell on \(roll)!")
             print("You win!")
+            Player.giveADifferentWeaponWhenDifferentClassesOpenTheBox()
 
             return true
         }
-        print("The dice fell on \(firstRoll) and \(secondRoll)")
+        print("The dice fell on \(roll)!")
         print("Better luck next time!")
         return false
     }

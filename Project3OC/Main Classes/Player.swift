@@ -14,6 +14,7 @@ class Player {
     var name = ""
     var team = [Character]()
     static var playerNames = [String]()
+    var round = 1
 
     // MARK: Logic
 
@@ -144,17 +145,12 @@ class Player {
     func fightingLoop() {
         var attackingTeam = player1
         var defendingTeam = player2
-        var round = 1
 
         while player1.team.count >= 1 && player2.team.count >= 1 {
             print("It's time for round \(round)!")
 
             let attackingCharacter = attackingTeam.selectCharacter(in: attackingTeam)
-//            Game.dropEqualsRolls()
-//
-//            if dropEqualsRolls = true {
-//
-//            }
+            GameTool.dropEqualsRolls()
 
             if let magician = attackingCharacter as? Magician {
                 let userAnswer = GameTool.getUserChoice(message: "Choose what you want your magician to do! 1: Attack or 2: Heal!", range: (min: 1, max: 2))
@@ -185,8 +181,29 @@ class Player {
 
     }
 
+    static func giveADifferentWeaponWhenDifferentClassesOpenTheBox() {
+        var attackingTeam = player1
+        let attackingCharacter = attackingTeam.selectCharacter(in: attackingTeam)
+        if let magician = attackingCharacter as? Magician {
+            let weapon =  Weapon.init(name: "Combined Elemental Attack", damage: 400)
+        } else {
+            let weapon = Weapon.init(name: "Dragon Scale Elven Sword", damage: 300)
+        }
+    }
+
+    func gameWinner() {
+        let winner: String
+        if player1.team.count > player2.team.count {
+            winner = player1.name
+        } else {
+            winner = player2.name
+        }
+        print("The game is now over. \(winner) has more members in his team and is therefore declared the winner of this game.")
+    }
+
     func gameOver() {
-        print("The game is over. The winner is nantoka")
+        print("A total of \(round) rounds were played")
+        gameWinner()
     }
 
 }
