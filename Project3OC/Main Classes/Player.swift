@@ -15,6 +15,8 @@ class Player {
     var team = [Character]()
     static var playerNames = [String]()
     var round = 1
+    var player1 = Player()
+    var player2 = Player()
 
     // MARK: Logic
 
@@ -34,6 +36,7 @@ class Player {
         }
         return getGenderCharacter()
     }
+    
 
     //letting the player choose which type he wants for his characters
     private func getCharacterType() -> String {
@@ -181,13 +184,15 @@ class Player {
 
     }
 
-    static func giveADifferentWeaponWhenDifferentClassesOpenTheBox() {
-        var attackingTeam = player1
+    static func changeCharacterWeapon() {
+        var attackingTeam = Player()
+
         let attackingCharacter = attackingTeam.selectCharacter(in: attackingTeam)
+
         if let magician = attackingCharacter as? Magician {
-            let weapon =  Weapon.init(name: "Combined Elemental Attack", damage: 400)
+            attackingCharacter.self.weapon = CombinedElementalAttack(name: "Combined Elemental Attack", damage: 400)
         } else {
-            let weapon = Weapon.init(name: "Dragon Scale Elven Sword", damage: 300)
+            attackingCharacter.self.weapon = DragonScaleElvenSword(name: "Dragon Scale Elven Sword", damage: 300)
         }
     }
 
