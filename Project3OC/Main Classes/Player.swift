@@ -15,8 +15,6 @@ class Player {
     var team = [Character]()
     static var playerNames = [String]()
     var round = 1
-    var player1 = Player()
-    var player2 = Player()
 
     // MARK: Logic
 
