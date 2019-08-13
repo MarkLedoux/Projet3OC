@@ -50,14 +50,17 @@ class GameTool {
     print("\nSorry for the wait, now it's finally your turn \(player2.name)!")
     player2.createTeam()
 
-    print("\(player1.team[0].name) has \(player1.team[0].healthPoints) HP")
-    print("\(player1.team[1].name) has \(player1.team[1].healthPoints) HP")
-    print("\(player1.team[2].name) has \(player1.team[2].healthPoints) HP")
-    print("\(player2.team[0].name) has \(player2.team[0].healthPoints) HP")
-    print("\(player2.team[1].name) has \(player2.team[1].healthPoints) HP")
-    print("\(player2.team[2].name) has \(player2.team[2].healthPoints) HP")
+    print("\n\(player1.team[0].name) has \(player1.team[0].healthPoints) HP\n")
+    print("\n\(player1.team[1].name) has \(player1.team[1].healthPoints) HP\n")
+    print("\n\(player1.team[2].name) has \(player1.team[2].healthPoints) HP\n")
+    print("\n\(player2.team[0].name) has \(player2.team[0].healthPoints) HP\n")
+    print("\n\(player2.team[1].name) has \(player2.team[1].healthPoints) HP\n")
+    print("\n\(player2.team[2].name) has \(player2.team[2].healthPoints) HP\n")
+
+    print("\n+++++++++++++++++++++++++++++++++++++++++++++++\n")
 
     print("Now it's time to fight! \(player1.name), please choose the character you want to use to attack!")
+
     fightingLoop()
 
     }
@@ -68,7 +71,7 @@ class GameTool {
         var defendingTeam = player2
 
         while player1.team.count >= 1 && player2.team.count >= 1 {
-            print("It's time for round \(round)!")
+            print("It's time for round \(round)!\n")
 
             let attackingCharacter = attackingTeam.selectCharacter(in: attackingTeam)
             GameTool.dropEqualsRolls()
@@ -96,6 +99,7 @@ class GameTool {
             }
             swap(&attackingTeam, &defendingTeam)
             round += 1
+            print("\n+++++++++++++++++++++++++++++++++++++++++++++++\n")
 
         }
         gameOver()
@@ -171,13 +175,13 @@ class GameTool {
         let roll = Int.random(in: 1...6)
 
         if roll == 6 {
-            print("The dice fell on \(roll)!")
+            print("\nThe dice fell on \(roll)!\n")
             print("You win!")
 //            changeCharacterWeapon()
 
             return true
         }
-        print("The dice fell on \(roll)!")
+        print("\nThe dice fell on \(roll)!\n")
         print("Better luck next time!")
         return false
     }
