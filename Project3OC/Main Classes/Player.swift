@@ -14,12 +14,11 @@ class Player {
     var name = ""
     var team = [Character]()
     static var playerNames = [String]()
-    var round = 1
 
     // MARK: Logic
 
     //asking the player to choose what gender he wants for his character and setting the possible choice to recognize uppercased and lowercased letters
-    private func getGenderCharacter() -> Character.Gender {
+    private func getCharacterGender() -> Character.Gender {
         print("Please choose your character's gender: M for male / F for female.")
         if let gender = readLine() {
             let uppercasedGender = gender.uppercased()
@@ -32,10 +31,9 @@ class Player {
                 print("An error has occured, please enter either m/M or f/F")
             }
         }
-        return getGenderCharacter()
+        return getCharacterGender()
     }
     
-
     //letting the player choose which type he wants for his characters
     private func getCharacterType() -> String {
         print("""
@@ -76,7 +74,6 @@ class Player {
     private func getCharacterName() -> String {
         print("Please enter a name for your character")
         return GameTool.naming()
-
     }
 
     //gathering all the data that was the input before in order to access it for the character's addition to the team
@@ -96,13 +93,11 @@ class Player {
         return setCharacter(name: name, type: type, gender: gender)
     }
 
-
-
     //using the data gathered in the previous function, adding a character into an array until the array reaches a size of three on its index
     func createTeam() {
         repeat {
             let type = getCharacterType()
-            let gender = getGenderCharacter()
+            let gender = getCharacterGender()
             let name = getCharacterName()
             let character = setCharacter(name: name, type: type, gender: gender)
             print("Please add a member to your team.")
@@ -113,8 +108,7 @@ class Player {
     }
 
     //makes it possible to remove the character at the array's index where the character's HP are less or equal to zero
-    func removeCharacterWhenDead() { //error when the first or second members in the array are taken out
-        
+    func removeCharacterWhenDead() {
         for teammate in team {
             if teammate.healthPoints <= 0 {
                 print("\(teammate.name) just died. From now on he'll be out of this fight.") //TODO: change text to better reflect the changes that happen during the fight
@@ -138,75 +132,5 @@ class Player {
                     print("Error please please choose a number that corresponds to the ones displayed above.")
         }
         return selectCharacter(in: player)
-
     }
-    //make the players attack three times in a row
-
-    
-    func fightingLoop() {
-        var attackingTeam = player1
-        var defendingTeam = player2
-
-        while player1.team.count >= 1 && player2.team.count >= 1 {
-            print("It's time for round \(round)!")
-
-            let attackingCharacter = attackingTeam.selectCharacter(in: attackingTeam)
-            GameTool.dropEqualsRolls()
-
-            if let magician = attackingCharacter as? Magician {
-                let userAnswer = GameTool.getUserChoice(message: "Choose what you want your magician to do! 1: Attack or 2: Heal!", range: (min: 1, max: 2))
-                    switch userAnswer {
-                    case 1:
-                        let defendingCharacter = attackingTeam.selectCharacter(in: defendingTeam)
-                        attackingCharacter.attack(target: defendingCharacter)
-                        defendingTeam.removeCharacterWhenDead()
-
-                    case 2:
-                        let healedCharacter = attackingTeam.selectCharacter(in: attackingTeam)
-                        magician.heal(target: healedCharacter)
-
-                    default:
-                        print("Error, something wrong happened.")
-                    }
-
-            } else {
-                let defendingCharacter = attackingTeam.selectCharacter(in: defendingTeam)
-                attackingCharacter.attack(target: defendingCharacter)
-                defendingTeam.removeCharacterWhenDead()
-            }
-            swap(&attackingTeam, &defendingTeam)
-            round += 1
-
-        }
-        gameOver()
-
-    }
-
-    static func changeCharacterWeapon() {
-        var attackingTeam = Player()
-
-        let attackingCharacter = attackingTeam.selectCharacter(in: attackingTeam)
-
-        if let magician = attackingCharacter as? Magician {
-            attackingCharacter.self.weapon = CombinedElementalAttack(name: "Combined Elemental Attack", damage: 400)
-        } else {
-            attackingCharacter.self.weapon = DragonScaleElvenSword(name: "Dragon Scale Elven Sword", damage: 300)
-        }
-    }
-
-    func gameWinner() {
-        let winner: String
-        if player1.team.count > player2.team.count {
-            winner = player1.name
-        } else {
-            winner = player2.name
-        }
-        print("The game is now over. \(winner) has more members in his team and is therefore declared the winner of this game.")
-    }
-
-    func gameOver() {
-        print("A total of \(round) rounds were played")
-        gameWinner()
-    }
-
 }

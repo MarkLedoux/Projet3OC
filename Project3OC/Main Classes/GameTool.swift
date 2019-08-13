@@ -12,6 +12,9 @@ class GameTool {
     static var name = [String]()
     static var player1 = Player()
     static var player2 = Player()
+    static var round = 1
+    static var attackingTeam = player1
+
     // simple print statements used once at the beginning of the game
     static func intro() {
         print("""
@@ -55,9 +58,75 @@ class GameTool {
     print("\(player2.team[2].name) has \(player2.team[2].healthPoints) HP")
 
     print("Now it's time to fight! \(player1.name), please choose the character you want to use to attack!")
-    player1.fightingLoop()
+    fightingLoop()
 
     }
+
+    //make the players attack three times in a row
+    static func fightingLoop() {
+
+        var defendingTeam = player2
+
+        while player1.team.count >= 1 && player2.team.count >= 1 {
+            print("It's time for round \(round)!")
+
+            let attackingCharacter = attackingTeam.selectCharacter(in: attackingTeam)
+            GameTool.dropEqualsRolls()
+
+            if let magician = attackingCharacter as? Magician {
+                let userAnswer = GameTool.getUserChoice(message: "Choose what you want your magician to do! 1: Attack or 2: Heal!", range: (min: 1, max: 2))
+                switch userAnswer {
+                case 1:
+                    let defendingCharacter = attackingTeam.selectCharacter(in: defendingTeam)
+                    attackingCharacter.attack(target: defendingCharacter)
+                    defendingTeam.removeCharacterWhenDead()
+
+                case 2:
+                    let healedCharacter = attackingTeam.selectCharacter(in: attackingTeam)
+                    magician.heal(target: healedCharacter)
+
+                default:
+                    print("Error, something wrong happened.")
+                }
+
+            } else {
+                let defendingCharacter = attackingTeam.selectCharacter(in: defendingTeam)
+                attackingCharacter.attack(target: defendingCharacter)
+                defendingTeam.removeCharacterWhenDead()
+            }
+            swap(&attackingTeam, &defendingTeam)
+            round += 1
+
+        }
+        gameOver()
+
+    }
+
+    static func gameOver() {
+        print("A total of \(round) rounds were played")
+        gameWinner()
+    }
+
+    static func gameWinner() {
+        let winner: String
+        if player1.team.count > player2.team.count {
+            winner = player1.name
+        } else {
+            winner = player2.name
+        }
+        print("The game is now over. \(winner) has more members in his team and is therefore declared the winner of this game.")
+    }
+
+//    static func changeCharacterWeapon() {
+//
+//        let attackingCharacter = attackingTeam.selectCharacter(in: attackingTeam)
+//
+//        if let magician = attackingCharacter as? Magician {
+//            attackingCharacter.self.weapon = CombinedElementalAttack(name: "Combined Elemental Attack", damage: 400)
+//        } else {
+//            attackingCharacter.self.weapon = DragonScaleElvenSword(name: "Dragon Scale Elven Sword", damage: 300)
+//        }
+//    }
 
     //return of a string for the naming of the players and the characters and checking if there are similarities in terms of the names
     static func naming() -> String {
@@ -104,7 +173,7 @@ class GameTool {
         if roll == 6 {
             print("The dice fell on \(roll)!")
             print("You win!")
-            Player.changeCharacterWeapon()
+//            changeCharacterWeapon()
 
             return true
         }
