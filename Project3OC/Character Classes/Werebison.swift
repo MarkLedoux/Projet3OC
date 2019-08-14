@@ -23,3 +23,4 @@ class Werebison: Character {
         print("Your character is ready to go!")
     }
 }
+
