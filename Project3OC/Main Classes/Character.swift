@@ -14,6 +14,7 @@ class Character {
         case male, female
     }
 
+    var type = "Character"
     var name = ""
     var healthPoints: Int
     var gender: Gender
@@ -26,7 +27,7 @@ class Character {
         self.name = name
         self.healthPoints = 0
         self.gender = .male
-        self.weapon = Weapon(name: "Large Sword", damage: 150)
+        self.weapon = Weapon(name: "Large Sword", damage: 150, weaponType: "Basic")
     }
     // MARK: Logic
 

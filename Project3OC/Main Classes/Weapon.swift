@@ -9,13 +9,15 @@
 import Cocoa
 
 class Weapon {
-    // MARK: Properties for the weapons used in the game 
+    // MARK: Properties for the weapons used in the game
     var name: String
     var damage: Int
+    var weaponType: String
 
-    init(name: String, damage: Int) {
+    init(name: String, damage: Int, weaponType: String) {
         self.name = name
         self.damage = damage
+        self.weaponType = weaponType
     }
 }
 

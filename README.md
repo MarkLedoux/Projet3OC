@@ -191,3 +191,162 @@ Update character’s description with more details
 When only one character in team no choice possible and select for the player by default 
 Penser au principe de RESPONSABILITÉ UNI    QUE des fonctions 
 Commenter le plus possible
+During fights detail of the actions in order, what happens or needs to happen
+- Print a statement asking to choose which character the player wants to attack with. The choice needs to adjust to the count in the character’s team so if there are two characters the choice can only 1 and 2 and if there is only one character left, no need to give the player the choice to choose his character.
+- Print the choices available using 1-3 and displaying the class of the character, his name and the weapon and damage points it will give 
+- Ask the player to enter the number of his choice conforming to the choice depending on how many characters are in the team 
+- Print a statement asking the player which character he wants to attack in the opposite team and display the same information displayed as when the attacking player is asked to choose which character he wants to attack with 
+- Display which character attacked with which weapon and how many HP the opposing character lost
+- Repeat with the other characters in the attacking player team 
+- Tell the other player it is his turn and repeat the same process 
+
+- Make it impossible for players to choose the same character to attack when it has already attacked as that wouldn’t be fair if a player only used the same character for attacking
+
+
+Faire un fichier helper ou on la gestion des names est effectuée utilisation pour players et characters 
+
+Phase de combat 
+- Faire en sorte que le joueur puisse attaquer trois fois avant de passer la main à l’autre joueur
+- Enlever les personnages quand ils sont morts 
+- Refactoriser les fonctions pour les noms
+- 
+Names to test the project in order of use 
+vinceled
+josh 
+
+Liberty
+Amandine 
+Oscar
+
+Kora
+Franklin
+Michael
+
+Transcript of the fight in a sentence 
+While there are more than one character in player 1’s team and more than one character in player 2’s team: 
+- Set the attacking player as player 1 
+- Set defending player as player 2 
+- Have player 1 attack player 2 three times
+- Set attacking player as player 2 
+- Set defending player as player 1 
+- Have player 2 attack player 1 three times 
+- Increase number of rounds 
+- Repeat 
+- When the statement becomes false end the loop and display the winner 
+- If player 1 has more character in his team than player 2 then player 1 is winner otherwise player 2 is the winner 
+- Display the number of rounds that were played overall for the whole game 
+- 
+
+TODO:
+- Solve bugs seen in the code like the bug that makes it impossible to select the second member to attack in the opposing team when a member dies 
+- Change text to better reflect what happens during the fighting like how many HP the characters have left 
+- Find how and where to increment the number of rounds 
+- Make a heal function heal that gives our healing points or make it a weapon that makes it possible to heal think about the box that appears in front of the character 
+- 
+
+Use of a local variable before its declaration? Execute but then use of a break to redeclare the property? 
+
+TODO for 15/8: 
+- Implement getUserChoice in the code and think about the range when removing dead characters
+- Move all fight functions to main as well as properties
+- Think of the message for the end of the game 
+- Add two weapons that can be found in the box 
+- Use downcasting to specify which actions take place according to the class of character finds the box
+- Prevent players from entering a void name 
+
+Give the characters a new weapon when the dice fall on the right number 
+- Change the name of the weapon the character uses 
+- Change the damage the character’s weapon deals
+- Overiding the current weapon of the character deal damage to the opponent
+
+Introduce different weapon levels depending on the number that that dice fall on.
+Make 6 levels each including different weapon depending on the character class and depending on the number 1-6 the dice fall on tell the class of the weapon, the name and how much damage it’ll give the opponent. 
+
+
+When attacking usually: 
+- setting attacking and defending team
+- Setting attacking character as a character selected in the attacking team
+- If the selected character is a magician, then ask user if he wants to attack or to heal
+- Get user answer
+- Heal or attack depending on what the user chose
+- Set defending character if the user chooses to attack 
+- Resolving damages
+
+
+What happens when I specify a new weapon, what is needed: 
+- No need to set up the attacking team since this is already specified for us at the beginning of each turn
+- The function needs to define the possible actions that can happen if the character selected is a magician, a were bison or of any of the other races
+- If the selected character is a magician then set the weapon accordingly and same if other races are selected 
+- To set the weapon to the character, we’ll need to bypass the default weapon of the character 
+- That means the function will need to return a weapon 
+Reset the character’s weapon after the turn with the winning roll ends? 
+
+TODO:
+- Add more weapons for the box  scraped?
+- depending on how much more powerful the weapon is add a class for its status 
+- Implement critical hit when the damage inflicted is 2x greater than the opponent’s HP 
+- Make the text in the game more readable
+- Finish implementing the box 
+- Move the code to where it belongs ?
+- 
+
+
+Weapons creation for the mystery box 
+
+￼
+￼
+
+Classes for weapons: 
+- default weapons are considered to be basic weapons 
+- In the box others weapons will range between 6 categories and will be chooses at random 
+- All classes will be defined based on the default weapons and the select classes will only have access to select weapons 
+- Fine weapons will be stringer by 1.2 times
+- Masterwork by 1.4 times 
+- Rare 1.6
+- Exotic 1.8
+- Ascended 2
+- Legendary 2.5
+
+New weapons to  add to the project 
+- Dagger 
+- Mace 
+- Scepter 
+- Axe 
+- Pistol
+- Sword
+- Focus 
+- Shield 
+- Torch
+- Warhorn
+- Great sword 
+- Hammer 
+- Long bow
+- Rifle 
+- Short bow 
+- Staff 
+- Harpoon gun
+- Spear 
+- Trident 
+- Earth 
+- Fire
+- Air
+- Water
+- Dark 
+
+Magician will only have access to six kinds of spells according to the same principles used for the weapons 
+- Random between water, air, earth, fire
+- Earth crush or air tornado
+- Water freeze or fire explosion 
+- Magma flow
+- Sun’s burn 
+- Dark conjuring 
+
+IDEA SCRAPED?
+
+TODO: 
+- Move each line of code to where it needs to be 
+- The player file should only have the create team and select characters lines
+- Game should have the code to start the game, start the fight, end the game 
+- Character should have the lines used to create a character for the team
+- Game tool should have all the rest of the lines
+Print a description in game tool to limit size of player 

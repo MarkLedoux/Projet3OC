@@ -9,8 +9,8 @@
 import Cocoa
 
 class ThinSword: Weapon {
-    override init(name: String, damage: Int) {
-        super.init(name: name, damage: damage)
+    override init(name: String, damage: Int, weaponType: String) {
+        super.init(name: name, damage: damage, weaponType: weaponType)
         self.name = "Thin Sword"
         self.damage = 120
     }

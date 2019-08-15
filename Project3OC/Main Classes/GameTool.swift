@@ -10,11 +10,7 @@ import Cocoa
 
 class GameTool {
     static var name = [String]()
-    static var player1 = Player()
-    static var player2 = Player()
-    static var round = 1
-    static var attackingTeam = player1
-    static var attackingCharacter = attackingTeam.selectCharacter(in: attackingTeam)
+
 
     // simple print statements used once at the beginning of the game
     static func intro() {
@@ -31,115 +27,16 @@ class GameTool {
 
 
         print("First off, it's time to choose names!")
-        gameStart()
     }
 
-   static func gameStart() {
-    print("PLAYER 1")
-    print("Choose a name!")
-    player1.name = naming()
-    print("\nPLAYER 2")
-    print("Choose a name!")
-    player2.name = naming()
+    static func changeWeapon(character: Character) {
 
-    print("\nPlayer 1 will now be refered to as \(player1.name)")
-    print("Player 2 will now be refered to as \(player2.name)")
-
-    print("\nNow the moment you've been waiting for!! It's finally time to create your teams!")
-    print("\nLet's start with you, \(player1.name)!")
-    player1.createTeam()
-    print("\nSorry for the wait, now it's finally your turn \(player2.name)!")
-    player2.createTeam()
-
-
-    // TODO: find a way to print those statements using a functions
-    print("\n\(player1.team[0].name) has \(player1.team[0].healthPoints) HP\n")
-    print("\n\(player1.team[1].name) has \(player1.team[1].healthPoints) HP\n")
-    print("\n\(player1.team[2].name) has \(player1.team[2].healthPoints) HP\n")
-    print("\n\(player2.team[0].name) has \(player2.team[0].healthPoints) HP\n")
-    print("\n\(player2.team[1].name) has \(player2.team[1].healthPoints) HP\n")
-    print("\n\(player2.team[2].name) has \(player2.team[2].healthPoints) HP\n")
-
-    print("\n+++++++++++++++++++++++++++++++++++++++++++++++\n")
-
-    print("Now it's time to fight! \(player1.name), please choose the character you want to use to attack!")
-
-    fightingLoop()
-
-    }
-
-    //make the players attack three times in a row
-    static func fightingLoop() {
-
-        var defendingTeam = player2
-
-        while player1.team.count >= 1 && player2.team.count >= 1 {
-            print("It's time for round \(round)!\n")
-
-            attackingCharacter = attackingTeam.selectCharacter(in: attackingTeam) //declaring attackingCharacter here makes the selection twice in the code
-            GameTool.dropEqualsRolls()
-
-            if let magician = attackingCharacter as? Magician {
-                let userAnswer = GameTool.getUserChoice(message: "Choose what you want your magician to do! 1: Attack or 2: Heal!", range: (min: 1, max: 2))
-                switch userAnswer {
-                case 1:
-                    let defendingCharacter = attackingTeam.selectCharacter(in: defendingTeam)
-                    attackingCharacter.attack(target: defendingCharacter)
-                    resetCharacterWeapon()
-                    defendingTeam.removeCharacterWhenDead()
-
-                case 2:
-                    let healedCharacter = attackingTeam.selectCharacter(in: attackingTeam)
-                    resetCharacterWeapon()
-                    magician.heal(target: healedCharacter)
-
-                default:
-                    print("Error, something wrong happened.")
-                }
-
-            } else {
-                let defendingCharacter = attackingTeam.selectCharacter(in: defendingTeam)
-                attackingCharacter.attack(target: defendingCharacter)
-                resetCharacterWeapon()
-                defendingTeam.removeCharacterWhenDead()
-            }
-            swap(&attackingTeam, &defendingTeam)
-            round += 1
-            print("\n+++++++++++++++++++++++++++++++++++++++++++++++\n")
-
-        }
-        gameOver()
-
-    }
-
-    static func gameOver() {
-        print("A total of \(round) rounds were played")
-        gameWinner()
-    }
-
-    static func gameWinner() {
-        let winner: String
-        if player1.team.count > player2.team.count {
-            winner = player1.name
+        if character is Magician {
+            character.weapon = CombinedElementalAttack(name: "Combined Elemental Attack", damage: 400, weaponType: "Basic")
         } else {
-            winner = player2.name
+            character.weapon = DragonScaleElvenSword(name: "Dragon Scale Elven Sword", damage: 300, weaponType: "Basic")
         }
-        print("The game is now over. \(winner) has more members in his team and is therefore declared the winner of this game.")
-    }
-
-    static func changeCharacterWeapon() {
-
-        if attackingCharacter is Magician {
-            attackingCharacter.self.weapon = CombinedElementalAttack(name: "Combined Elemental Attack", damage: 400)
-        } else {
-            attackingCharacter.self.weapon = DragonScaleElvenSword(name: "Dragon Scale Elven Sword", damage: 300)
-        }
-    }
-
-    //TODO: find how to bring back the changed weapon to its original value
-    static func resetCharacterWeapon() {
-
-
+        print("\(character.name) found \(character.weapon.name) in the TREASURE CHEST. \(character.name) will now be equipped with this weapon which can inflict \(character.weapon.damage) and is a \(character.weapon.weaponType) type of weapon.")
     }
 
     //return of a string for the naming of the players and the characters and checking if there are similarities in terms of the names
@@ -181,19 +78,61 @@ class GameTool {
     }
 
     //roll of dice displayed as two random numbers between 1-6 and if the number fall on 6 the treasure box appears
-    static func dropEqualsRolls() -> Bool {
+    static func diceRoll() -> Bool {
         let roll = Int.random(in: 1...6)
 
         if roll == 6 {
             print("\nThe dice fell on \(roll)!\n")
-            print("You win!")
-            changeCharacterWeapon()
-
+            print("You win! Now the treasure chest will open!!")
             return true
         }
         print("\nThe dice fell on \(roll)!\n")
         print("Better luck next time!")
         return false
+    }
+
+   static func characterTypeIntro() {
+        print("""
+            Please choose your character's type :
+            1 - Human:
+                 475HP for male and 110 damage points
+                 500HP for female and 120 damage points
+
+            Humans might not possess as much healthpoints as the elves do nor do they possess the same amount of knowledge as the magicians but
+            They can still hold their on in a battle. Out of all the races Humans possess the most balanced points between the damage
+            They can inflict and how enduring they can be where their healthpoints are concerned.
+
+            2 - Elf:
+
+                450HP for male and 90 damage points
+                750HP for female and 80 damage points
+
+            Hearing their names would at first glance make one think they'd be fierce warrior but contrary to most everyone's beliefs;
+            Having prioritized their knowledge, despite their high healthpoints, the elves represent the most underwhelming race as far as
+            Physical prowess is concerned. Still despite this setback, they can prove to be quite useful in battle.
+
+            3 - Magician:
+
+                250HP for male
+                500HP for female
+
+                Both of them inflict 180 damage points
+
+            Don't be fooled by the amounts of healthpoints the magicians have! They pack quit the punch.
+            Intellectual monsters, the vast knowledge they possess have made them experts in all kind of magics.
+            Their strength in magic still stand unrivaled amongst all the other races making them the fiercest of fighters.
+
+            4 - Werebison:
+
+                675HP for male and 140 damage points
+                775HP for female and 150 damage points
+
+            Believing in no one but themselves, the werebison have learned to count on nothing but the things they're good at.
+            In their case, this came down to training to fight and they've honed their fighting skills generation after generation in a strict
+            Spartan like military culture. The result? Despite not being as knowledgeable as the magicians, due to their increasingly high endurance
+            which is even higher than that of the elves, the werebisons still managed to get  their fighting skills almost on par with that of the magicians.
+
+""")
     }
 
 }

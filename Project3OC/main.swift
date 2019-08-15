@@ -8,7 +8,8 @@
 
 import Foundation
 
-GameTool.intro()
+let game = Game()
+game.start()
 
 
 

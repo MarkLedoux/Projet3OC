@@ -14,12 +14,12 @@ class Werebison: Character {
         super.init(name: name, gender: gender)
         if (self.gender == .female) {
             self.healthPoints = 675
-            self.weapon = LargeSword(name: "Large Sword", damage: 150)
+            self.weapon = LargeSword(name: "Large Sword", damage: 150, weaponType: "Basic")
         } else {
             self.healthPoints = 775
-            self.weapon = Axe(name: "Axe", damage: 140)
+            self.weapon = Axe(name: "Axe", damage: 140, weaponType: "Basic")
         }
-
+        self.type = "Werebison"
         print("Your character is ready to go!")
     }
 }
