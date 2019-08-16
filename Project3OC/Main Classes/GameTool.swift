@@ -31,12 +31,57 @@ class GameTool {
 
     static func changeWeapon(character: Character) {
 
+        // Create Array of weapons for magicians
+        let newWeaponsForMagiciansAttack = [
+            Weapon(name: "Earth Attack", damage: Int.random(in: 210...220), weaponType: "Fine"),
+            Weapon(name: "Water Attack", damage: Int.random(in: 210...220), weaponType: "Fine"),
+            Weapon(name: "Fire Attack", damage: Int.random(in: 250...260), weaponType: "Masterwork"),
+            Weapon(name: "Air Attack", damage: Int.random(in: 250...260), weaponType: "Masterwork"),
+            Weapon(name: "Combined Elemental Attack", damage: Int.random(in: 280...290), weaponType: "Rare"),
+            Weapon(name: "Dark Magic Attack", damage: Int.random(in: 280...290), weaponType: "Rare"),
+            Weapon(name: "Boulder Crush", damage: Int.random(in: 320...330), weaponType: "Exotic"),
+            Weapon(name: "Cyclone", damage: Int.random(in: 320...330), weaponType: "Exotic"),
+            Weapon(name: "Freeze Over", damage: Int.random(in: 360...370), weaponType: "Ascended"),
+            Weapon(name: "Pyroclastic Explosion", damage: Int.random(in: 360...370), weaponType: "Ascended"),
+            Weapon(name: "Magna Flow", damage: Int.random(in: 450...500), weaponType: "Legendary"),
+            Weapon(name: "Sunburn", damage: Int.random(in: 450...500), weaponType: "Legendary"),
+            Weapon(name: "Dark Conjuring", damage: Int.random(in: 450...500), weaponType: "Legendary")
+        ]
+
+        // Create Array of weapons for all the other classes
+        let newWeaponsForOtherClasses = [
+            Weapon(name: "Super Javelin", damage: Int.random(in: 160...170), weaponType: "Fine"),
+            Weapon(name: "Super Sword", damage: Int.random(in: 160...170), weaponType: "Fine"),
+            Weapon(name: "Super Knife", damage: Int.random(in: 160...170), weaponType: "Fine"),
+            Weapon(name: "Super Gun", damage: Int.random(in: 160...170), weaponType: "Fine"),
+            Weapon(name: "Dwarf Made Axe", damage: Int.random(in: 190...200), weaponType: "Masterwork"),
+            Weapon(name: "Dwarf Made Large Sword", damage: Int.random(in: 190...200), weaponType: "Masterwork"),
+            Weapon(name: "Dwarf Made Sword", damage: Int.random(in: 190...200), weaponType: "Masterwork"),
+            Weapon(name: "Thief Dagger", damage: Int.random(in: 190...200), weaponType: "Masterwork"),
+            Weapon(name: "Elven Mace", damage: Int.random(in: 220...230), weaponType: "Rare"),
+            Weapon(name: "Platinum Scepter", damage: Int.random(in: 220...230), weaponType: "Rare"),
+            Weapon(name: "Fast Firing Pistol", damage: Int.random(in: 220...230), weaponType: "Rare"),
+            Weapon(name: "Elven Sword", damage: Int.random(in: 220...230), weaponType: "Rare"),
+            Weapon(name: "Focus", damage: Int.random(in: 250...260), weaponType: "Exotic"),
+            Weapon(name: "Orion Shield", damage: Int.random(in: 250...260), weaponType: "Exotic"),
+            Weapon(name: "Thor's Hammer", damage: Int.random(in: 250...260), weaponType: "Exotic"),
+            Weapon(name: "Old Wooden Long Bow", damage: Int.random(in: 250...260), weaponType: "Exotic"),
+            Weapon(name: "66Rifle", damage: Int.random(in: 290...300), weaponType: "Ascended"),
+            Weapon(name: "Quick Fire Short Bow", damage: Int.random(in: 290...300), weaponType: "Ascended"),
+            Weapon(name: "Golden Staff", damage: Int.random(in: 290...300), weaponType: "Ascended"),
+            Weapon(name: "Shockwave Harpoon Gun", damage: Int.random(in: 290...300), weaponType: "Ascended"),
+            Weapon(name: "Tungsten Spear", damage: Int.random(in: 350...450), weaponType: "Legendary"),
+            Weapon(name: "Titanium Trident", damage: Int.random(in: 350...450), weaponType: "Legendary"),
+            Weapon(name: "Chromium Scythe", damage: Int.random(in: 350...450), weaponType: "Legendary"),
+            Weapon(name: "Dragon Scale Elven Sword", damage: Int.random(in: 350...450), weaponType: "Legendary"),
+        ]
+
         if character is Magician {
-            character.weapon = CombinedElementalAttack(name: "Combined Elemental Attack", damage: 400, weaponType: "Basic")
-        } else {
-            character.weapon = DragonScaleElvenSword(name: "Dragon Scale Elven Sword", damage: 300, weaponType: "Basic")
+            character.weapon = newWeaponsForMagiciansAttack.randomElement()!
+            } else {
+            character.weapon = newWeaponsForOtherClasses.randomElement()!
         }
-        print("\(character.name) found \(character.weapon.name) in the TREASURE CHEST. \(character.name) will now be equipped with this weapon which can inflict \(character.weapon.damage) and is a \(character.weapon.weaponType) type of weapon.")
+        print("\(character.name) found \(character.weapon.name) in the TREASURE CHEST. \(character.name) will now be equipped with this weapon which can inflict \(character.weapon.damage) damage and is a \(character.weapon.weaponType) type of weapon.")
     }
 
     //return of a string for the naming of the players and the characters and checking if there are similarities in terms of the names
