@@ -14,7 +14,7 @@ class Character {
         case male, female
     }
 
-    var type = "Character"
+    var type = ""
     var name = ""
     var healthPoints: Int
     var gender: Gender
