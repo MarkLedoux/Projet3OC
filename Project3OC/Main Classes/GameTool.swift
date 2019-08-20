@@ -29,6 +29,7 @@ class GameTool {
         print("First off, it's time to choose names!")
     }
 
+    //making arrays in which the new weapons that will appear in the box will be stored. clear separation between the magicians' weapons and the other classes' weapons
     static func changeWeapon(character: Character) {
 
         // Create Array of weapons for magicians
@@ -76,6 +77,7 @@ class GameTool {
             Weapon(name: "Dragon Scale Elven Sword", damage: Int.random(in: 350...450), type: "Legendary"),
         ]
 
+        //now that we know which weapons are going to come out through the box, addind a random elements to specify that the weapons will be coming out randomly
         if character is Magician {
             character.weapon = newWeaponsForMagiciansAttack.randomElement()!
             } else {
@@ -90,6 +92,7 @@ class GameTool {
             var isInt: Bool {
                 return Int(name) != nil
             }
+            //checking that the name isn't already taken
             let isUnique = !GameTool.name.contains(name.capitalized)
 
             if !isUnique {
@@ -105,6 +108,7 @@ class GameTool {
     }
     
 
+    // getting the user choice by specifying a custom message that the user needs to conform to a certain range when selecting the number
     static func getUserChoice(message: String, range: (min: Int, max: Int)) -> Int {
         print(message)
         if let entry = readLine() {

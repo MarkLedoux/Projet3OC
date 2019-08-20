@@ -22,6 +22,7 @@ class Magician: Character {
         print("Your character is ready to go!")
     }
 
+    // healing for the magician, similar to attack, however the healthpoints get added to the existing healthpoints of the character. 
     func heal(target: Character) {
         if healthPoints > 0 {
             target.healthPoints += heal

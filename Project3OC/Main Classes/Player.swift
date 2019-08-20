@@ -118,6 +118,7 @@ class Player {
         return selectCharacter(in: player)
     }
 
+    
     func displayTeam() {
         for (index, character) in self.team.enumerated() {
             print("\(index + 1) \(character.name) is a \(character.type), has \(character.healthPoints) HP and can inflict \(character.weapon.damage) damage using a \(character.weapon.name) which is a \(character.weapon.type) type of weapon.")

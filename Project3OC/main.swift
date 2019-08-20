@@ -8,5 +8,7 @@
 
 import Foundation
 
+//creating an instance of the class Game
 let game = Game()
+//usimg the instance to call the function required to start the game
 game.start()

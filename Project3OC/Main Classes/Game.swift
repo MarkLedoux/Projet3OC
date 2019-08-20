@@ -13,6 +13,7 @@ class Game {
     var player2 = Player()
     var round = 1
 
+    //function to start the game and printing what is required at the beginning of the game
     func start() {
         GameTool.intro()
         print("PLAYER 1")
@@ -49,24 +50,31 @@ class Game {
         var attackingTeam = player1
         var defendingTeam = player2
 
+        //using a condition in order for the game to looop until the condition becomes false
         while player1.team.count >= 1 && player2.team.count >= 1 {
             print("It's time for round \(round)!\n")
 
+            // making the attacking character as a character selected in attacking team
             let attackingCharacter = attackingTeam.selectCharacter(in: attackingTeam)
+            //calling the function called dice roll determining if the chest comes out or not
             let chest = GameTool.diceRoll()
+            //if the function diceroll returns true then the following line will change the character weapon according to the function in game tool
             if chest {
                 GameTool.changeWeapon(character: attackingCharacter)
             }
 
+            // when the attacking character is a magician, get an answer from the player using the get user choice function in game tool
             if let magician = attackingCharacter as? Magician {
                 let userAnswer = GameTool.getUserChoice(message: "Choose what you want your magician to do! 1: Attack or 2: Heal!", range: (min: 1, max: 2))
                 switch userAnswer {
                 case 1:
+                    // after getting the answer from the user, case one for attack says the defending character is the one the user selected
                     let defendingCharacter = attackingTeam.selectCharacter(in: defendingTeam)
                     attackingCharacter.attack(target: defendingCharacter)
                     defendingTeam.removeCharacterWhenDead()
 
                 case 2:
+                    // for healing, the character to be healed is the one the player selected in his own team
                     let healedCharacter = attackingTeam.selectCharacter(in: attackingTeam)
                     magician.heal(target: healedCharacter)
 
@@ -75,6 +83,7 @@ class Game {
                 }
 
             } else {
+                // whenever the attacking character is not a magician these lines will compile instead in order to set as defending character the character selected by the player
                 let defendingCharacter = attackingTeam.selectCharacter(in: defendingTeam)
                 attackingCharacter.attack(target: defendingCharacter)
                 defendingTeam.removeCharacterWhenDead()
@@ -85,6 +94,7 @@ class Game {
             print("\n+++++++++++++++++++++++++++++++++++++++++++++++\n")
 
         }
+        // calling the function when the condition in fighting loop is not met anymore
         gameOver()
 
     }
@@ -94,6 +104,7 @@ class Game {
         gameWinner()
     }
 
+    // the winner of the game is decided by comparing how many characters each player has on their team 
     func gameWinner() {
         let winner: String
         if player1.team.count > player2.team.count {
