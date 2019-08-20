@@ -79,6 +79,7 @@ class Game {
                 attackingCharacter.attack(target: defendingCharacter)
                 defendingTeam.removeCharacterWhenDead()
             }
+            //switch between attacking and defending team 
             swap(&attackingTeam, &defendingTeam)
             round += 1
             print("\n+++++++++++++++++++++++++++++++++++++++++++++++\n")
@@ -101,5 +102,8 @@ class Game {
             winner = player2.name
         }
         print("The game is now over. \(winner) has more members in his team and is therefore declared the winner of this game.")
+        player1.displayTeam()
+        player2.displayTeam()
+        
     }
 }

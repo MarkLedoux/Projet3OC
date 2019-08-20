@@ -17,7 +17,7 @@ class Magician: Character {
         } else {
             self.healthPoints = 250
         }
-        self.weapon = ElectricalAttack(name: "Electrical Attack", damage: 180, weaponType: "Basic")
+        self.weapon = Weapon(name: "Electrical Attack", damage: 180, type: "Basic")
         self.type = "Magician"
         print("Your character is ready to go!")
     }

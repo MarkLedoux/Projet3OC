@@ -12,12 +12,12 @@ class Weapon {
     // MARK: Properties for the weapons used in the game
     var name: String
     var damage: Int
-    var weaponType: String
+    var type: String
 
-    init(name: String, damage: Int, weaponType: String) {
+    init(name: String, damage: Int, type: String) {
         self.name = name
         self.damage = damage
-        self.weaponType = weaponType
+        self.type = type
     }
 }
 

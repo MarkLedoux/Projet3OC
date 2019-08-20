@@ -107,7 +107,7 @@ class Player {
     func selectCharacter(in player: Player) -> Character {
         print("Please choose a character among the characters in the following list.")
         for (index, character) in player.team.enumerated() {
-            print("\(index + 1) - \(character.name) is a \(character.type), has \(character.healthPoints) HP and is equipped with a weapon that can inflict \(character.weapon.damage) damage using a \(character.weapon.weaponType) type of weapon.")
+            print("\(index + 1) - \(character.name) is a \(character.type), has \(character.healthPoints) HP and is equipped with a weapon that can inflict \(character.weapon.damage) damage using a \(character.weapon.type) type of weapon.")
         }
         let choiceInt = GameTool.getUserChoice(message: "Please choose a number in accordance to the numbers displayed above.", range: (min: 1, max: 3))
                 if (player.team.count >= choiceInt) && (choiceInt > 0) {
@@ -120,7 +120,7 @@ class Player {
 
     func displayTeam() {
         for (index, character) in self.team.enumerated() {
-            print("\(index + 1) \(character.name) is a \(character.type), has \(character.healthPoints) HP and can inflict \(character.weapon.damage) damage using a \(character.weapon.name) which is a \(character.weapon.weaponType) type of weapon.")
-        }
+            print("\(index + 1) \(character.name) is a \(character.type), has \(character.healthPoints) HP and can inflict \(character.weapon.damage) damage using a \(character.weapon.name) which is a \(character.weapon.type) type of weapon.")
+        } 
     }
 }

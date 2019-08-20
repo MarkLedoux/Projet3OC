@@ -14,10 +14,10 @@ class Elf: Character {
         super.init(name: name, gender: gender)
                 if (self.gender == .female) {
             self.healthPoints = 750
-            self.weapon = Knife(name: "Knife", damage: 80, weaponType: "Basic")
+            self.weapon = Weapon(name: "Knife", damage: 80, type: "Basic")
         } else {
             self.healthPoints = 450
-            self.weapon = Gun(name: "Gun", damage: 90, weaponType: "Basic")
+            self.weapon = Weapon(name: "Gun", damage: 90, type: "Basic")
         }
         self.type = "Elf"
         print("Your character is ready to go!")
