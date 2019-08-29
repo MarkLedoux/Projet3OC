@@ -88,10 +88,7 @@ class GameTool {
 
     //return of a string for the naming of the players and the characters and checking if there are similarities in terms of the names
     static func naming() -> String {
-        if var name = readLine() {
-            var isInt: Bool {
-                return Int(name) != nil
-            }
+        if let name = readLine() {
             //checking that the name isn't already taken
             let isUnique = !GameTool.name.contains(name.capitalized)
 

@@ -97,6 +97,7 @@ class Player {
             if teammate.healthPoints <= 0 {
                 print("\(teammate.name) just died. \(teammate.name) is out of this fight.")
                 let index = team.firstIndex(where: { $0 === teammate })
+                // no reason for error as teammate is a part of team
                 team.remove(at: index!)
                 print("You now have \(team.count) character still able to fight in your team")
             }
