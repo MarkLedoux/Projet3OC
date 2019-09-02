@@ -33,7 +33,6 @@ class Game {
         player2.createTeam()
 
 
-        // TODO: find a way to print those statements using a functions
         player1.displayTeam()
         player2.displayTeam()
 

@@ -80,11 +80,11 @@ class Player {
     //using the data gathered in the previous function, adding a character into an array until the array reaches a size of three on its index
     func createTeam() {
         repeat {
+            print("Please add a member to your team.")
             let type = getCharacterType()
             let gender = getCharacterGender()
             let name = getCharacterName()
             let character = setCharacter(name: name, type: type, gender: gender)
-            print("Please add a member to your team.")
             team.append(character)
         } while team.count < 3
         print("Your team is ready to go.")
